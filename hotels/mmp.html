@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munduk Moding Plantation | Forgotten Bali</title>
+    <meta name="description"
+        content="Above the clouds at Munduk Moding Plantation - the iconic infinity pool and coffee plantation resort in Bali's highlands.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'jungle': {
+                            900: '#1a2e1a',
+                            800: '#243524',
+                            700: '#2d4a2d',
+                            600: '#3d5c3d',
+                        },
+                        'volcanic': {
+                            900: '#2d2d2d',
+                            800: '#3d3d3d',
+                            700: '#4a4a4a',
+                            600: '#5c5c5c',
+                        },
+                        'rice': {
+                            100: '#f0f5e8',
+                            200: '#e5edd8',
+                            300: '#d4e3c0',
+                            400: '#b8d49a',
+                        },
+                        'mist': {
+                            50: '#fafbf9',
+                            100: '#f5f7f3',
+                            200: '#eef1eb',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(26, 46, 26, 0.6) 0%, rgba(26, 46, 26, 0.3) 50%, rgba(26, 46, 26, 0.7) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-mist-50 text-volcanic-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-jungle-900/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="font-serif text-xl text-mist-100 tracking-wide">Forgotten Bali</a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-mist-100" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#itinerary"
+                        class="text-mist-200 hover:text-white transition-colors text-sm tracking-wide">Itinerary</a>
+                    <a href="/#hotels"
+                        class="text-mist-200 hover:text-white transition-colors text-sm tracking-wide">Hotels</a>
+                    <a href="/#pricing"
+                        class="text-mist-200 hover:text-white transition-colors text-sm tracking-wide">Pricing</a>
+                    <a href="/#contact"
+                        class="bg-rice-400 text-jungle-900 px-5 py-2 rounded text-sm font-medium hover:bg-rice-300 transition-colors">Book
+                        Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-jungle-800 border-t border-jungle-700">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/#itinerary" class="block py-2 text-mist-200 hover:text-white transition-colors">Itinerary</a>
+                <a href="/#hotels" class="block py-2 text-mist-200 hover:text-white transition-colors">Hotels</a>
+                <a href="/#pricing" class="block py-2 text-mist-200 hover:text-white transition-colors">Pricing</a>
+                <a href="/#contact"
+                    class="block bg-rice-400 text-jungle-900 px-5 py-3 rounded text-center font-medium mt-4">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/assets/mmp/pool.jpg" alt="Munduk Moding Plantation infinity pool"
+                class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 w-full px-6 pb-12 sm:pb-16">
+            <div class="max-w-4xl mx-auto">
+                <a href="/#hotels"
+                    class="inline-flex items-center gap-2 text-rice-300 text-sm mb-4 hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to Hotels
+                </a>
+                <div class="flex items-center gap-3 mb-3">
+                    <p class="text-rice-400 text-sm tracking-[0.2em] uppercase">Days 2-4 • Munduk</p>
+                    <span class="bg-rice-400 text-jungle-900 px-3 py-1 rounded-full text-xs font-medium">The Star</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-mist-50 mb-4">Munduk Moding Plantation</h1>
+                <p class="text-mist-200 text-lg sm:text-xl max-w-2xl">Above the clouds. The iconic infinity pool that
+                    defines Bali's highland luxury. Three nights of mountain magic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Chose This -->
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-jungle-600 text-sm tracking-[0.2em] uppercase mb-4">Why Here</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-jungle-900 mb-6">The Star of the Show</h2>
+                    <p class="text-volcanic-600 leading-relaxed mb-4">
+                        This is the moment you've been waiting for. Munduk Moding Plantation isn't just a hotel — it's
+                        an experience that has graced a thousand Instagram feeds for good reason.
+                    </p>
+                    <p class="text-volcanic-600 leading-relaxed mb-4">
+                        Perched at 1,000 meters above sea level, the resort offers commanding views over rolling coffee
+                        plantations and jungle valleys that disappear into the clouds below. The famous infinity pool
+                        appears to float in the mist.
+                    </p>
+                    <p class="text-volcanic-600 leading-relaxed mb-4">
+                        We spend three nights here — the longest stay of the trip — because some places deserve to be
+                        savored, not rushed. Morning yoga overlooking the valley. Afternoon coffee plantation tours.
+                        Evenings watching the fog roll in.
+                    </p>
+                    <p class="text-volcanic-600 leading-relaxed">
+                        This is where wild luxury lives.
+                    </p>
+                </div>
+                <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
+                    <img src="/assets/mmp/view.jpg" alt="Munduk Moding Plantation valley view"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 sm:py-20 bg-mist-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-jungle-600 text-sm tracking-[0.2em] uppercase mb-4 text-center">Gallery</p>
+            <h2 class="font-serif text-3xl sm:text-4xl text-jungle-900 mb-10 text-center">Explore the Property</h2>
+
+            <div class="hotel-gallery grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="aspect-square rounded-lg overflow-hidden md:col-span-2 md:row-span-2">
+                    <img src="/assets/mmp/pool.jpg" alt="MMP infinity pool"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-lg overflow-hidden">
+                    <img src="/assets/mmp/room.jpg" alt="MMP villa interior"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-lg overflow-hidden">
+                    <img src="/assets/mmp/coffee.jpg" alt="MMP coffee plantation"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-lg overflow-hidden">
+                    <img src="/assets/mmp/view.jpg" alt="MMP valley view"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-lg overflow-hidden">
+                    <img src="/assets/mmp/restaurant.jpg" alt="MMP restaurant"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-lg overflow-hidden">
+                    <img src="/assets/mmp/yoga.jpg" alt="MMP yoga deck"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Included Activities -->
+    <section class="py-16 sm:py-20 bg-jungle-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-rice-400 text-sm tracking-[0.2em] uppercase mb-4 text-center">Included</p>
+            <h2 class="font-serif text-3xl sm:text-4xl text-mist-100 mb-10 text-center">Your Three Days Here</h2>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="bg-jungle-700/50 rounded-xl p-6">
+                    <h3 class="font-serif text-xl text-mist-100 mb-3">Morning Yoga</h3>
+                    <p class="text-mist-200 text-sm leading-relaxed">Start each day with yoga on the resort's dedicated
+                        deck, overlooking the misty valley. Suitable for all levels.</p>
+                </div>
+                <div class="bg-jungle-700/50 rounded-xl p-6">
+                    <h3 class="font-serif text-xl text-mist-100 mb-3">Coffee Plantation Tour</h3>
+                    <p class="text-mist-200 text-sm leading-relaxed">Learn how Bali's famous coffee is grown, harvested,
+                        and roasted. Includes tasting of specialty brews.</p>
+                </div>
+                <div class="bg-jungle-700/50 rounded-xl p-6">
+                    <h3 class="font-serif text-xl text-mist-100 mb-3">Infinity Pool Access</h3>
+                    <p class="text-mist-200 text-sm leading-relaxed">The iconic pool is yours to enjoy. Best at sunrise
+                        when the mist sits heavy in the valley below.</p>
+                </div>
+                <div class="bg-jungle-700/50 rounded-xl p-6">
+                    <h3 class="font-serif text-xl text-mist-100 mb-3">Guided Meditations</h3>
+                    <p class="text-mist-200 text-sm leading-relaxed">Morning and evening meditation sessions with James,
+                        designed for both beginners and experienced practitioners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-jungle-600 text-sm tracking-[0.2em] uppercase mb-4 text-center">Amenities</p>
+            <h2 class="font-serif text-3xl sm:text-4xl text-jungle-900 mb-10 text-center">What to Expect</h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">Private Villas</h3>
+                        <p class="text-volcanic-600 text-sm">Individual cottages with panoramic views</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">Famous Infinity Pool</h3>
+                        <p class="text-volcanic-600 text-sm">The iconic cloud-level pool experience</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">Air Conditioning</h3>
+                        <p class="text-volcanic-600 text-sm">Cool mountain air, with AC backup</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">Free Wi-Fi</h3>
+                        <p class="text-volcanic-600 text-sm">Reliable connection throughout</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">On-site Restaurant</h3>
+                        <p class="text-volcanic-600 text-sm">Farm-to-table dining with valley views</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-10 h-10 bg-rice-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-jungle-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-jungle-900 mb-1">Spa & Wellness</h3>
+                        <p class="text-volcanic-600 text-sm">Traditional treatments and massage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-jungle-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl sm:text-4xl text-mist-100 mb-6">Continue Exploring</h2>
+            <p class="text-mist-200 mb-8">Discover the other exceptional properties on this journey.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/hotels/sanglung.html"
+                    class="inline-flex items-center justify-center gap-2 bg-rice-400 text-jungle-900 px-6 py-3 rounded font-medium hover:bg-rice-300 transition-colors">
+                    Next: Sanglung Villas
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+                <a href="/#hotels"
+                    class="inline-flex items-center justify-center gap-2 bg-transparent text-mist-100 px-6 py-3 rounded font-medium border border-mist-200 hover:bg-jungle-800 transition-colors">
+                    View All Hotels
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-jungle-900 py-12 border-t border-jungle-700">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <a href="/" class="font-serif text-xl text-mist-100 mb-2 block">Forgotten Bali</a>
+                    <p class="text-mist-200 text-sm">The Wild North • April 4-13, 2026</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="mailto:james@forgottenbali.com"
+                        class="text-mist-200 hover:text-white transition-colors text-sm">james@forgottenbali.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

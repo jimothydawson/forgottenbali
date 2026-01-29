@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotten Bali | The Bali You Were Promised Still Exists</title>
+    <meta name="description"
+        content="A 10-Day Curated Expedition into the misty ridges and hidden waterfalls of Northern Bali. Exclusive. Wild. Luxurious.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'jungle': {
+                            900: '#0d1a0d',
+                            800: '#152415',
+                            700: '#1c2e1c',
+                            600: '#2d4a2d',
+                        },
+                        'volcanic': {
+                            900: '#121212',
+                            800: '#1a1a1a',
+                            700: '#2d2d2d',
+                            600: '#3d3d3d',
+                        },
+                        'rice': {
+                            100: '#f0f5e8',
+                            200: '#e5edd8',
+                            300: '#d4e3c0',
+                            400: '#b8d49a',
+                        },
+                        'mist': {
+                            50: '#fafbf9',
+                            100: '#f5f7f3',
+                            200: '#eef1eb',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(13, 26, 13, 0.4) 0%, rgba(13, 26, 13, 0.2) 50%, rgba(13, 26, 13, 0.9) 100%);
+        }
+
+        .itinerary-image-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rotating-frame img {
+            transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+        }
+
+        .itinerary-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-volcanic-900 text-mist-100 selection:bg-rice-400 selection:text-jungle-900">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-volcanic-900/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="font-serif text-2xl tracking-tighter hover:text-rice-300 transition-colors">Forgotten
+                    Bali</a>
+
+                <div class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.3em] font-medium">
+                    <a href="#manifesto" class="hover:text-rice-300 transition-colors">Manifesto</a>
+                    <a href="#fixer" class="hover:text-rice-300 transition-colors">The Fixer</a>
+                    <a href="#itinerary" class="hover:text-rice-300 transition-colors">Expedition</a>
+                    <a href="#hotels" class="hover:text-rice-300 transition-colors">Stays</a>
+                    <a href="#apply"
+                        class="bg-rice-400 text-jungle-900 px-6 py-3 rounded-sm hover:bg-white transition-all transform hover:-translate-y-0.5">Apply
+                        Now</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-volcanic-900 border-t border-white/5 h-screen">
+            <div class="flex flex-col items-center justify-center space-y-8 h-[80vh] text-xl font-serif">
+                <a href="#manifesto" class="mobile-link">Manifesto</a>
+                <a href="#fixer" class="mobile-link">The Fixer</a>
+                <a href="#itinerary" class="mobile-link">Expedition</a>
+                <a href="#hotels" class="mobile-link">Stays</a>
+                <a href="#apply" class="text-rice-400 border border-rice-400 px-10 py-4 rounded-full">Apply for
+                    April</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="hero.png" alt="Misty Bali Ridge"
+                class="w-full h-full object-cover scale-110 animate-[subtle-zoom_20s_infinite_alternate]">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <p class="text-rice-300 text-[10px] tracking-[0.5em] uppercase mb-8 font-semibold reveal">Limited to 10
+                Guests • April 2026</p>
+            <h1
+                class="font-serif text-5xl sm:text-7xl md:text-8xl text-white mb-8 leading-[0.9] tracking-tighter reveal">
+                The Bali You Were <br class="hidden md:block"> Promised Still Exists.
+            </h1>
+            <p class="text-mist-200 text-lg sm:text-2xl mb-12 font-light max-w-2xl mx-auto leading-relaxed reveal">
+                Escape the traffic, the crowds, and the noise. Join a curated 10-day expedition into the misty ridges,
+                hidden waterfalls, and sacred springs of the Deep North.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center reveal">
+                <a href="#itinerary"
+                    class="bg-white text-jungle-900 px-10 py-5 rounded-sm font-medium text-sm uppercase tracking-widest hover:bg-rice-300 transition-all">
+                    View the Path
+                </a>
+                <a href="#apply"
+                    class="border border-white/30 text-white px-10 py-5 rounded-sm font-medium text-sm uppercase tracking-widest hover:bg-white hover:text-jungle-900 transition-all">
+                    Apply for a Spot
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-10 hidden lg:block">
+            <div class="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-white/40">
+                <span class="w-12 h-px bg-white/20"></span>
+                Scroll to Begin
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="py-32 bg-volcanic-900 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center">
+                <h2 class="font-serif text-4xl md:text-6xl text-white mb-16 reveal">A Manifesto for the <span
+                        class="italic text-rice-300">Disconnected.</span></h2>
+                <div
+                    class="space-y-12 text-xl md:text-3xl font-light text-mist-200 leading-tight text-left md:text-center">
+                    <p class="reveal">We don’t do beach clubs. We don’t do 4-hour traffic jams. We founded Forgotten
+                        Bali to reclaim the island’s soul.</p>
+                    <p class="reveal">We take you where the pavement ends and the real story begins—focusing on the
+                        silent North, away from the commercialized chaos of the South.</p>
+                    <p class="reveal italic text-rice-400 font-serif">"This is Wild Luxury: 5-star comfort in places the
+                        influencers haven't found yet."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Fixer (Bio) -->
+    <section id="fixer" class="py-32 bg-jungle-900 border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="relative reveal">
+                    <div
+                        class="aspect-[4/5] overflow-hidden rounded-sm grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                        <div id="bio-frame" class="w-full h-full relative rotating-frame">
+                            <img src="assets/bio/webp/IMG_0114.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <img src="assets/bio/webp/IMG_0326.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0533.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0126.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0153.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0221.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0241.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0340.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0352.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0367.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0394.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0437.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0510.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0515.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0552.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0643.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0722.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0734.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0745.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0746.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0755.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0785.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0801.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0806.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0850.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                            <img src="assets/bio/webp/IMG_0857.webp" alt="James Dawson"
+                                class="absolute inset-0 w-full h-full object-cover opacity-0">
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-rice-400 text-jungle-900 p-8 hidden md:block">
+                        <p class="font-serif text-2xl italic">"I've mapped the routes they haven't found."</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Meet Your Fixer</p>
+                    <h2 class="font-serif text-5xl md:text-7xl text-white mb-8">James Dawson.</h2>
+                    <div class="space-y-6 text-mist-200 text-lg leading-relaxed">
+                        <p>Outdoor Guide since 2017. Bali Resident since 2022. Certified Meditation Teacher.</p>
+                        <p>I’ve left no stone unturned in Bali's wild north. I know the secret waterfalls, the empty
+                            temples, and exactly which tourist traps to avoid. My goal is to show you the spots that are
+                            genuinely impressive, at the exact right time to miss the crowds.</p>
+                        <p class="text-rice-300 font-serif italic text-xl">This isn't a tour; it’s an insider’s private
+                            circuit.</p>
+                    </div>
+                    <div class="mt-12 flex gap-4">
+                        <div class="w-2 h-2 rounded-full bg-rice-400"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/20"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof (Reviews) -->
+    <section id="reviews" class="py-32 bg-jungle-800 border-b border-white/5 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <div id="reviews-slider" class="relative">
+                <div class="reviews-track flex transition-transform duration-1000 ease-in-out">
+                    <!-- Slide 1: Gracie -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James was super knowledgeable and friendly, and I felt safe the entire time. 10/10."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Gracie •
+                            January 2026</cite>
+                    </div>
+
+                    <!-- Slide 2: Annabelle -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James is a great guy, you really get to see the area through the eyes of a local."
+                        </blockquote>
+                        <cite
+                            class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Annabelle
+                            • March 2024</cite>
+                    </div>
+
+                    <!-- Slide 3: Divya -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James was an incredible kind and knowledgeable guide. I’m grateful for his suggestions."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Divya •
+                            March 2024</cite>
+                    </div>
+
+                    <!-- Slide 4: Michaela -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James is great, he is very kind, has a lot of knowledge and passion for what he does."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Michaela
+                            • March 2024</cite>
+                    </div>
+
+                    <!-- Slide 5: Jesse -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James is an expert in his craft and he enjoys every moment of it! Safe, fun, and
+                            educational."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Jesse •
+                            February 2024</cite>
+                    </div>
+
+                    <!-- Slide 6: Léo -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James was amazing. He is passionate about the ocean and the beautiful life underwater."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Léo •
+                            January 2024</cite>
+                    </div>
+
+                    <!-- Slide 7: Christina -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James was knowledgeable and inclusive. His knowledge of the area was super helpful for us!"
+                        </blockquote>
+                        <cite
+                            class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Christina
+                            • December 2023</cite>
+                    </div>
+
+                    <!-- Slide 8: Joerg -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "The personalized attention and safety measures ensured a worry-free and enjoyable outing."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Joerg •
+                            December 2023</cite>
+                    </div>
+
+                    <!-- Slide 9: Mykol -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James's knowledge and love of the ocean shone through. His calm demeanor put all of us at
+                            ease."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Mykol •
+                            March 2023</cite>
+                    </div>
+
+                    <!-- Slide 10: Tahli -->
+                    <div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
+                        <div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+                        <blockquote
+                            class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
+                            "James is brilliant at tailoring the experience to each participant’s needs. Truly
+                            personal."
+                        </blockquote>
+                        <cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Tahli •
+                            January 2023</cite>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 lg:-left-20">
+                    <button id="prev-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors">
+                        <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 lg:-right-20">
+                    <button id="next-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors">
+                        <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Path (Itinerary) -->
+    <section id="itinerary" class="py-32 bg-volcanic-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div>
+                    <p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">The Expedition Path
+                    </p>
+                    <h2 class="font-serif text-5xl md:text-8xl text-white leading-none tracking-tighter">Ten Days of
+                        <br> Discovery.
+                    </h2>
+                </div>
+                <div class="max-w-md text-mist-300">
+                    <p>We move with the sun. From the black sand of the west to the misty ridges of the north, every
+                        stop is intentional. No filler. No tourist traps.</p>
+                </div>
+            </div>
+
+            <div class="space-y-32">
+                <!-- Day 1 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="assets/WakaGangga/pool.jpg" alt="Day 1"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 lg:pl-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">01</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">The Gathering & Decompression</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">Meet at WakaGangga (Tabanan). Sunset on
+                            black sand beaches. A slow reset after travel. We meet where the waves meet the volcano.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: WakaGangga</p>
+                    </div>
+                </div>
+
+                <!-- Day 2-4 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-5 lg:order-1 order-2 lg:pr-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">02-04</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">Into the Clouds</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">Ancient UNESCO terraces, the Bayan Tree,
+                            and the "Star of the Show" — Munduk Moding Plantation. Three nights of mountain magic, yoga,
+                            and coffee forest treks.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: Munduk Moding Plantation</p>
+                    </div>
+                    <div class="lg:col-span-7 lg:order-2 order-1">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="munduk.png" alt="MMP"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="sekumpul.png" alt="Sekumpul"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 lg:pl-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">05</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">The King of Waterfalls</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">We trek Sekumpul en route to the dry
+                            north. This is the raw Bali. Check in to the wild isolation of Sanglung Villas.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: Sanglung Villas</p>
+                    </div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-5 lg:order-1 order-2 lg:pr-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">06</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">The Forgotten Coast</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">Yeh Mampeh Waterfall and the salt farmers
+                            of Tejakula. This is where the tourists end and the island begins.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: Sanglung Villas</p>
+                    </div>
+                    <div class="lg:col-span-7 lg:order-2 order-1">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="assets/sanglung/pool.jpg" alt="Sanglung"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7-8 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="sebatu.png" alt="Bambootel"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 lg:pl-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">07-08</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">The Crater Rim & Sacred Temples</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">Drive up the volcano. Lunch with a view at
+                            Kintamani. Tirta Empul at sunrise. We settle into the sustainable luxury of Bambootel.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: Bambootel (Sebatu)</p>
+                    </div>
+                </div>
+
+                <!-- Day 9-10 -->
+                <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-5 lg:order-1 order-2 lg:pr-12">
+                        <span class="text-rice-400 font-serif text-4xl mb-6 block">09-10</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">The Soft Landing</h3>
+                        <p class="text-mist-200 text-lg leading-relaxed mb-6">A final transfer to Sanur. Happy hour,
+                            farewell dinner, and beachfront bliss at Maya Sanur. A luxury finish for a wild journey.</p>
+                        <p class="text-white/40 text-xs uppercase tracking-widest">Base: Maya Sanur</p>
+                    </div>
+                    <div class="lg:col-span-7 lg:order-2 order-1">
+                        <div class="aspect-[16/9] overflow-hidden rounded-sm group itinerary-card">
+                            <img src="assets/maya-sanur/pool.jpg" alt="Maya"
+                                class="w-full h-full object-cover transition-transform duration-1000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stays Section (Hotel Grid) -->
+    <section id="hotels" class="py-32 bg-volcanic-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">The Sanctuaries</p>
+                <h2 class="font-serif text-4xl md:text-6xl text-white">Where You'll Rest.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
+                <!-- Waka -->
+                <a href="hotels/wakagangga.html" class="group relative aspect-square overflow-hidden bg-volcanic-900">
+                    <img src="assets/WakaGangga/pool.jpg" alt="Waka"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl text-white mb-2">WakaGangga</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-rice-300">Tabanan • Night 1</p>
+                    </div>
+                </a>
+                <!-- MMP -->
+                <a href="hotels/mmp.html" class="group relative aspect-square overflow-hidden bg-volcanic-900">
+                    <img src="munduk.png" alt="MMP"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl text-white mb-2">Munduk Moding</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-rice-300">Munduk • Nights 2-4</p>
+                    </div>
+                </a>
+                <!-- Sanglung -->
+                <a href="hotels/sanglung.html" class="group relative aspect-square overflow-hidden bg-volcanic-900">
+                    <img src="assets/sanglung/pool.jpg" alt="Sanglung"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl text-white mb-2">Sanglung Villas</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-rice-300">Tejakula • Nights 5-6</p>
+                    </div>
+                </a>
+                <!-- Bambootel -->
+                <a href="hotels/bambootel.html" class="group relative aspect-square overflow-hidden bg-volcanic-900">
+                    <img src="sebatu.png" alt="Bambootel"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl text-white mb-2">Bambootel</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-rice-300">Sebatu • Nights 7-8</p>
+                    </div>
+                </a>
+                <!-- Maya -->
+                <a href="hotels/maya-sanur.html" class="group relative aspect-square overflow-hidden bg-volcanic-900">
+                    <img src="assets/maya-sanur/pool.jpg" alt="Maya"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl text-white mb-2">Maya Sanur</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-rice-300">Sanur • Night 9</p>
+                    </div>
+                </a>
+                <!-- Apply CTA Square -->
+                <div class="aspect-square bg-rice-400 p-8 flex flex-col justify-center items-center text-center">
+                    <p class="text-jungle-900 font-serif text-2xl mb-6 leading-tight">Ready to claim your spot?</p>
+                    <a href="#apply"
+                        class="border border-jungle-900/20 text-jungle-900 px-6 py-3 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-jungle-900 hover:text-white transition-all">Start
+                        Application</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Inclusions (The Investment) -->
+    <section id="apply" class="py-32 bg-jungle-900 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="reveal">
+                    <h2 class="font-serif text-5xl md:text-7xl text-white mb-12">The Investment.</h2>
+                    <div class="space-y-8 mb-16">
+                        <div class="flex justify-between items-end border-b border-white/10 pb-6">
+                            <span class="text-mist-200 uppercase tracking-widest text-xs">Twin Share</span>
+                            <span class="font-serif text-4xl text-rice-300">$4,750<span
+                                    class="text-xs uppercase ml-2 tracking-normal font-sans">pp</span></span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-white/10 pb-6">
+                            <span class="text-mist-200 uppercase tracking-widest text-xs">Single Occupancy</span>
+                            <span class="font-serif text-4xl text-rice-300">$6,750<span
+                                    class="text-xs uppercase ml-2 tracking-normal font-sans">pp</span></span>
+                        </div>
+                    </div>
+                    <a href="mailto:james@forgottenbali.com?subject=Expedition Application - April 2026"
+                        class="inline-block bg-rice-400 text-jungle-900 px-12 py-6 rounded-sm font-bold text-sm uppercase tracking-[0.2em] hover:bg-white transition-all w-full text-center">
+                        Apply for April 2026
+                    </a>
+                    <p class="text-white/30 text-center mt-6 text-xs uppercase tracking-widest">Only 10 slots available.
+                    </p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="font-serif text-2xl text-white mb-8">What's Inside.</h3>
+                    <ul class="space-y-4 text-mist-300 text-sm">
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            Luxury Minibus & Professional Driver
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            All Luxury Stays (9 Nights)
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            All Breakfasts & Excursion Lunches
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            2x Daily Guided Meditations
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            All Entrance Fees & Private Guiding
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+                            Airport Transfers (Same Day)
+                        </li>
+                    </ul>
+                    <div class="mt-12 p-8 bg-volcanic-900/50 border border-white/5 rounded-sm">
+                        <p class="text-white/40 text-[10px] uppercase tracking-widest mb-4">Not Included</p>
+                        <p class="text-mist-400 text-sm leading-relaxed">Flights, Dinners, Drinks, and Travel Insurance.
+                            We leave dinners open to allow for local exploration and spontaneous decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-volcanic-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="font-serif text-3xl">Forgotten Bali</div>
+            <div class="flex gap-12 text-[10px] uppercase tracking-widest text-white/40">
+                <a href="#" class="hover:text-rice-300 transition-colors">Instagram</a>
+                <a href="#" class="hover:text-rice-300 transition-colors">Privacy</a>
+                <a href="mailto:james@forgottenbali.com" class="hover:text-rice-300 transition-colors">Contact</a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest text-white/20">© 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

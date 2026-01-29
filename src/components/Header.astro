@@ -1,0 +1,35 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-volcanic-900/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between h-20">
+            <a href="/" class="font-serif text-2xl tracking-tighter hover:text-rice-300 transition-colors whitespace-nowrap">Forgotten Bali</a>
+
+            <div class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.3em] font-medium">
+                <a href="/#manifesto" class="hover:text-rice-300 transition-colors">Manifesto</a>
+                <a href="/#fixer" class="hover:text-rice-300 transition-colors">The Insider</a>
+                <a href="/#itinerary" class="hover:text-rice-300 transition-colors">Expedition</a>
+                <a href="/#hotels" class="hover:text-rice-300 transition-colors">Stays</a>
+                <a href="/#apply" class="bg-rice-400 text-jungle-900 px-6 py-3 rounded-sm hover:bg-white transition-all transform hover:-translate-y-0.5">Secure Your Spot</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-volcanic-900 border-t border-white/5 h-screen">
+        <div class="flex flex-col items-center justify-center space-y-8 h-[80vh] text-xl font-serif">
+            <a href="/#manifesto" class="mobile-link">Manifesto</a>
+            <a href="/#fixer" class="mobile-link">The Insider</a>
+            <a href="/#itinerary" class="mobile-link">Expedition</a>
+            <a href="/#hotels" class="mobile-link">Stays</a>
+            <a href="/#apply" class="text-rice-400 border border-rice-400 px-10 py-4 rounded-full">Reserve for April</a>
+        </div>
+    </div>
+</nav>

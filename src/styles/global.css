@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-volcanic-900: #0d0d0d;
+  --color-volcanic-800: #1a1a1a;
+  --color-volcanic-700: #262626;
+  --color-volcanic-600: #333333;
+
+  --color-jungle-900: #0d1a0d;
+  --color-jungle-800: #1a261a;
+  --color-jungle-700: #263326;
+  --color-jungle-600: #334033;
+
+  --color-rice-100: #f0f5e8;
+  --color-rice-200: #e5edd8;
+  --color-rice-300: #d4e3c0;
+  --color-rice-400: #b8d49a;
+
+  --color-mist-50: #fafbf9;
+  --color-mist-100: #f5f7f3;
+  --color-mist-200: #eef1eb;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD7K_RW7eDZ6TVzyPPvcSRh5TeOks20Id_98YOxig.woff2) format('woff2');
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .rotating-frame img {
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+  }
+
+  .itinerary-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(180deg, rgba(13, 26, 13, 0.4) 0%, rgba(13, 26, 13, 0.2) 50%, rgba(13, 26, 13, 0.9) 100%);
+  }
+}
+
+@keyframes subtle-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 20s infinite alternate;
+}
