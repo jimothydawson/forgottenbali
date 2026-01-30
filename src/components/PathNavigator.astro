@@ -2,43 +2,50 @@
 const days = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
-<div id="path-navigator-unified" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-auto transition-all duration-700">
-  <div class="flex items-center gap-1 p-2 bg-volcanic-900/80 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl">
-    <!-- Main Sections -->
-    <div class="flex items-center gap-1 border-r border-white/10 pr-2 mr-1">
-      <a href="#the-insider" data-nav="the-insider" class="px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Me</a>
-      <a href="#sanctuaries" data-nav="sanctuaries" class="px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Stays</a>
-    </div>
+<div id="path-navigator-unified" class="fixed bottom-0 left-0 w-full z-50 transition-all duration-700">
+  <div class="bg-volcanic-900/90 backdrop-blur-2xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 sm:py-6">
+      <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+        <!-- Brand/Status -->
+        <div class="flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-1 sm:min-w-[120px]">
+          <p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase font-bold">Expedition</p>
+          <div class="flex gap-4">
+             <a href="#the-insider" data-nav="the-insider" class="text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Me</a>
+             <a href="#sanctuaries" data-nav="sanctuaries" class="text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Stays</a>
+          </div>
+        </div>
 
-    <!-- Day Buttons -->
-    <div class="flex items-center gap-1 overflow-x-auto max-w-[50vw] sm:max-w-none no-scrollbar">
-      {days.map((day) => (
-        <a 
-          href={`#day-${day}`} 
-          data-day={day}
-          class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400 bg-volcanic-950/20"
-        >
-          {day}
-        </a>
-      ))}
+        <!-- Itinerary Grid -->
+        <div class="flex-grow w-full">
+          <p class="text-white/20 text-[9px] uppercase tracking-[0.5em] mb-3 text-center sm:text-left">Itinerary</p>
+          <div class="grid grid-cols-5 gap-1.5 sm:gap-2">
+            {days.map((day) => (
+              <a 
+                href={`#day-${day}`} 
+                data-day={day}
+                class="aspect-square flex items-center justify-center rounded-xs sm:rounded-sm text-[11px] sm:text-sm font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400 bg-white/5"
+              >
+                {day}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   #path-navigator-unified .active {
-    background-color: var(--color-rice-400);
+    background-color: var(--color-rice-400) !important;
     color: var(--color-jungle-900) !important;
-    border-color: var(--color-rice-400);
+    border-color: var(--color-rice-400) !important;
     transform: scale(1.05);
   }
 
-  /* Hide scrollbar but keep functionality */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  /* Optional: Highlight the text links too */
+  a[data-nav].active {
+    color: var(--color-rice-400) !important;
+    background: transparent !important;
   }
 </style>
