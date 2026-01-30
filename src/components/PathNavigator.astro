@@ -2,43 +2,38 @@
 const days = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
-<div id="path-navigator" class="fixed left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-700 pointer-events-none md:block">
-  <div class="flex flex-col gap-3 p-3 bg-volcanic-900/40 backdrop-blur-md rounded-full border border-white/10 pointer-events-auto">
-    {days.map((day) => (
-      <a 
-        href={`#day-${day}`} 
-        data-day={day}
-        class="w-8 h-8 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400"
-      >
-        {day.toString().padStart(2, '0')}
-      </a>
-    ))}
-  </div>
-</div>
+<div id="path-navigator-unified" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-auto transition-all duration-700">
+  <div class="flex items-center gap-1 p-2 bg-volcanic-900/80 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl">
+    <!-- Main Sections -->
+    <div class="flex items-center gap-1 border-r border-white/10 pr-2 mr-1">
+      <a href="#the-insider" data-nav="the-insider" class="px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Me</a>
+      <a href="#sanctuaries" data-nav="sanctuaries" class="px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Stays</a>
+    </div>
 
-<div id="path-navigator-mobile" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 pointer-events-none md:hidden">
-  <div class="flex gap-2 p-2 bg-volcanic-900/60 backdrop-blur-xl rounded-full border border-white/10 pointer-events-auto overflow-x-auto max-w-[90vw] no-scrollbar">
-    {days.map((day) => (
-      <a 
-        href={`#day-${day}`} 
-        data-day={day}
-        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400 bg-volcanic-950/20"
-      >
-        {day}
-      </a>
-    ))}
+    <!-- Day Buttons -->
+    <div class="flex items-center gap-1 overflow-x-auto max-w-[50vw] sm:max-w-none no-scrollbar">
+      {days.map((day) => (
+        <a 
+          href={`#day-${day}`} 
+          data-day={day}
+          class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400 bg-volcanic-950/20"
+        >
+          {day}
+        </a>
+      ))}
+    </div>
   </div>
 </div>
 
 <style>
-  #path-navigator .active,
-  #path-navigator-mobile .active {
+  #path-navigator-unified .active {
     background-color: var(--color-rice-400);
-    color: var(--color-jungle-900);
+    color: var(--color-jungle-900) !important;
     border-color: var(--color-rice-400);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
+  /* Hide scrollbar but keep functionality */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

@@ -16,21 +16,39 @@ document.addEventListener('DOMContentLoaded', () => {
  * Path Navigator (Itinerary Scroll-spy)
  */
 function initPathNavigator() {
-    const navigator = document.getElementById('path-navigator');
-    const navigatorMobile = document.getElementById('path-navigator-mobile');
-
+    const navigator = document.getElementById('path-navigator-unified');
     if (!navigator) return;
 
-    // active state tracking
-    const daySections = document.querySelectorAll('[id^="day-"]');
-    const navLinks = document.querySelectorAll('#path-navigator a, #path-navigator-mobile a');
+    const navLinks = navigator.querySelectorAll('a');
 
+    // Major sections tracking
+    const mainSections = ['the-insider', 'sanctuaries'];
+    const mainObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-nav') === sectionId);
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+
+    mainSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) mainObserver.observe(el);
+    });
+
+    // Day sections tracking
+    const daySections = document.querySelectorAll('[id^="day-"]');
     const dayObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const dayId = entry.target.id.split('-')[1];
-
                 navLinks.forEach(link => {
+                    // Turn off main section active states when in itinerary
+                    if (link.hasAttribute('data-nav')) link.classList.remove('active');
+                    // Highlight current day
                     link.classList.toggle('active', link.getAttribute('data-day') === dayId);
                 });
             }
