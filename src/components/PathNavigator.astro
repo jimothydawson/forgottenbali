@@ -1,0 +1,49 @@
+---
+const days = Array.from({ length: 10 }, (_, i) => i + 1);
+---
+
+<div id="path-navigator" class="fixed left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-700 pointer-events-none opacity-0 translate-x-[-100%] md:translate-x-0 md:opacity-0 md:block">
+  <div class="flex flex-col gap-3 p-3 bg-volcanic-900/40 backdrop-blur-md rounded-full border border-white/10 pointer-events-auto">
+    {days.map((day) => (
+      <a 
+        href={`#day-${day}`} 
+        data-day={day}
+        class="w-8 h-8 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400"
+      >
+        {day.toString().padStart(2, '0')}
+      </a>
+    ))}
+  </div>
+</div>
+
+<div id="path-navigator-mobile" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 pointer-events-none opacity-0 translate-y-10 md:hidden">
+  <div class="flex gap-2 p-2 bg-volcanic-900/60 backdrop-blur-xl rounded-full border border-white/10 pointer-events-auto overflow-x-auto max-w-[90vw] no-scrollbar">
+    {days.map((day) => (
+      <a 
+        href={`#day-${day}`} 
+        data-day={day}
+        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full text-[10px] font-bold transition-all duration-300 border border-white/5 hover:border-rice-400 hover:text-rice-400 text-mist-400 bg-volcanic-950/20"
+      >
+        {day}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  #path-navigator .active,
+  #path-navigator-mobile .active {
+    background-color: var(--color-rice-400);
+    color: var(--color-jungle-900);
+    border-color: var(--color-rice-400);
+    transform: scale(1.1);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

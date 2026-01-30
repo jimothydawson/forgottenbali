@@ -9,7 +9,60 @@ document.addEventListener('DOMContentLoaded', () => {
     initReviewsSlider();
     initScrollReveal();
     initSmoothScroll();
+    initPathNavigator();
 });
+
+/**
+ * Path Navigator (Itinerary Scroll-spy)
+ */
+function initPathNavigator() {
+    const navigator = document.getElementById('path-navigator');
+    const navigatorMobile = document.getElementById('path-navigator-mobile');
+    const itinerarySection = document.getElementById('itinerary');
+
+    if (!navigator || !itinerarySection) return;
+
+    // Show/Hide navigator based on itinerary visibility
+    const visibilityObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navigator.classList.remove('opacity-0', 'translate-x-[-100%]');
+                navigator.classList.add('opacity-100', 'translate-x-0');
+                if (navigatorMobile) {
+                    navigatorMobile.classList.remove('opacity-0', 'translate-y-10');
+                    navigatorMobile.classList.add('opacity-100', 'translate-y-0');
+                }
+            } else {
+                navigator.classList.add('opacity-0', 'translate-x-[-100%]');
+                navigator.classList.remove('opacity-100', 'translate-x-0');
+                if (navigatorMobile) {
+                    navigatorMobile.classList.add('opacity-0', 'translate-y-10');
+                    navigatorMobile.classList.remove('opacity-100', 'translate-y-0');
+                }
+            }
+        });
+    }, { threshold: 0.05 });
+
+    visibilityObserver.observe(itinerarySection);
+
+    // active state tracking
+    const daySections = document.querySelectorAll('[id^="day-"]');
+    const navLinks = document.querySelectorAll('#path-navigator a, #path-navigator-mobile a');
+
+    const dayObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const dayId = entry.target.id.split('-')[1];
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-day') === dayId);
+                });
+            }
+        });
+    }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
+
+    daySections.forEach(day => dayObserver.observe(day));
+}
 
 /**
  * Mobile Navigation Menu
