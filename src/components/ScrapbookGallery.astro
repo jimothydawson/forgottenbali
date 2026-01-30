@@ -15,10 +15,10 @@ const { images } = Astro.props;
 const getSpanClass = (span?: string) => {
   switch (span) {
     case 'full': return 'col-span-2 md:col-span-12 aspect-[16/9] md:aspect-[21/9]';
-    case 'half': return 'col-span-2 md:col-span-6 aspect-[4/3] md:aspect-[16/9]';
-    case 'portrait': return 'col-span-2 md:col-span-6 aspect-[1/1] md:aspect-[3/4]';
-    case 'third': return 'col-span-2 md:col-span-4 aspect-square';
-    default: return 'col-span-2 md:col-span-6 aspect-square md:aspect-[16/9]';
+    case 'half': return 'col-span-1 md:col-span-6 aspect-[4/3] md:aspect-[16/9]';
+    case 'portrait': return 'col-span-1 md:col-span-6 aspect-[3/4]';
+    case 'third': return 'col-span-1 md:col-span-4 aspect-square';
+    default: return 'col-span-1 md:col-span-6 aspect-square md:aspect-[16/9]';
   }
 };
 ---

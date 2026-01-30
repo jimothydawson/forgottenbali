@@ -11,43 +11,89 @@ const days = [
   { id: 9, img: "/assets/maya-sanur/pool.jpg" },
   { id: 10, img: "/assets/maya-sanur/pool-beach.jpg" }
 ];
+
+const { pathname } = Astro.url;
+const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').filter(Boolean).pop() : null;
 ---
 
 <div id="path-navigator-unified" class="fixed bottom-0 left-0 w-full z-50 transition-all duration-700">
-  <div class="bg-volcanic-900/95 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_50px_rgba(0,0,0,0.6)]">
-    <div class="max-w-screen-2xl mx-auto px-4 py-2 sm:py-3">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
-        <!-- Brand/Status -->
-        <div class="flex items-center gap-6 shrink-0">
-          <p class="hidden md:block text-rice-400 text-[10px] tracking-[0.5em] uppercase font-bold">The Path</p>
-          <div class="flex gap-6">
-             <a href="#the-insider" data-nav="the-insider" class="text-[11px] font-bold uppercase tracking-widest text-mist-300 hover:text-white transition-all">Me</a>
-             <a href="#sanctuaries" data-nav="sanctuaries" class="text-[11px] font-bold uppercase tracking-widest text-mist-300 hover:text-white transition-all">Stays</a>
-          </div>
-        </div>
+  <!-- Onboarding Popup -->
+  <div id="itinerary-onboarding" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-6 w-[calc(100%-3rem)] max-w-sm hidden opacity-0 translate-y-4 transition-all duration-700">
+    <div class="bg-rice-400 text-jungle-900 p-6 shadow-2xl rounded-sm relative overflow-hidden group">
+      <div class="absolute top-0 left-0 w-1 h-full bg-white/20"></div>
+      <p class="font-serif text-lg italic leading-tight pr-6">Use these numbered paths to discover each day of the journey.</p>
+      <button id="close-onboarding" class="absolute top-4 right-4 text-jungle-900/40 hover:text-jungle-900 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <div class="w-4 h-4 bg-rice-400 rotate-45 absolute -bottom-2 left-1/2 -translate-x-1/2"></div>
+  </div>
 
+  <div class="bg-volcanic-900/95 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_50px_rgba(0,0,0,0.6)]">
+    <div class="max-w-screen-2xl mx-auto px-4 py-3 sm:py-4">
+      <div class="flex items-center justify-center">
         <!-- Itinerary Grid -->
         <div class="w-full max-w-4xl">
-          <div class="grid grid-cols-10 gap-1 sm:gap-2 md:gap-3">
-            {days.map((day) => (
-              <a 
-                href={`#day-${day.id}`} 
-                data-day={day.id}
-                class="relative aspect-[4/3] group overflow-hidden rounded-xs border border-white/5 transition-all duration-500 hover:scale-110 active:scale-95 shadow-lg"
-              >
-                <img src={day.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                <div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-transparent transition-all duration-500"></div>
-                <div class="relative z-10 flex items-center justify-center h-full">
-                  <span class="text-xs sm:text-sm md:text-base font-serif italic text-white group-hover:text-rice-400 group-active:text-rice-400 transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{day.id}</span>
-                </div>
-              </a>
-            ))}
+          <div class="grid grid-cols-5 md:grid-cols-10 gap-1.5 sm:gap-2 md:gap-3">
+            {days.map((day) => {
+              const isActive = currentDayId === day.id.toString();
+              return (
+                <a 
+                  href={`/itinerary/${day.id}`} 
+                  data-day={day.id}
+                  class={`relative aspect-[4/3] group overflow-hidden rounded-xs border border-white/5 transition-all duration-500 hover:scale-110 active:scale-95 shadow-lg ${isActive ? 'active' : ''}`}
+                >
+                  <img src={day.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div class={`absolute inset-0 transition-all duration-500 ${isActive ? 'bg-transparent' : 'bg-jungle-950/40 group-hover:bg-transparent'}`}></div>
+                  <div class="relative z-10 flex items-center justify-center h-full">
+                    <span class={`text-xs sm:text-base md:text-lg font-serif italic text-white group-hover:text-rice-400 group-active:text-rice-400 transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${isActive ? '!text-jungle-900 font-black drop-shadow-none' : ''}`}>{day.id}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function initOnboarding() {
+    const popup = document.getElementById('itinerary-onboarding');
+    const closeBtn = document.getElementById('close-onboarding');
+    const hasSeenOnboarding = localStorage.getItem('seen-itinerary-onboarding');
+
+    if (popup && !hasSeenOnboarding) {
+      setTimeout(() => {
+        popup.classList.remove('hidden');
+        // Trigger animation in next frame
+        requestAnimationFrame(() => {
+          popup.classList.add('opacity-100', 'translate-y-0');
+          popup.classList.remove('opacity-0', 'translate-y-4');
+        });
+      }, 1500);
+
+      const closePopup = () => {
+        popup.classList.add('opacity-0', 'translate-y-4');
+        popup.classList.remove('opacity-100', 'translate-y-0');
+        setTimeout(() => popup.classList.add('hidden'), 700);
+        localStorage.setItem('seen-itinerary-onboarding', 'true');
+      };
+
+      if (closeBtn) closeBtn.onclick = closePopup;
+      
+      // Also close when any day is clicked
+      document.querySelectorAll('#path-navigator-unified a').forEach(a => {
+        a.addEventListener('click', closePopup);
+      });
+    }
+  }
+
+  // Load on initial and client-side navigations
+  document.addEventListener('DOMContentLoaded', initOnboarding);
+  document.addEventListener('astro:after-swap', initOnboarding);
+</script>
 
 <style>
   #path-navigator-unified .active {
@@ -65,11 +111,5 @@ const days = [
     color: var(--color-jungle-900) !important;
     font-weight: 900;
     text-shadow: none;
-  }
-
-  a[data-nav].active {
-    color: var(--color-rice-400) !important;
-    text-decoration: underline;
-    text-underline-offset: 4px;
   }
 </style>

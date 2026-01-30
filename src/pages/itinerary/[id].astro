@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PathNavigator from '../../components/PathNavigator.astro';
+import ScrapbookGallery from '../../components/ScrapbookGallery.astro';
+import { itinerary } from '../../data/itinerary';
+
+export async function getStaticPaths() {
+  return itinerary.map((day) => ({
+    params: { id: day.id.toString() },
+    props: { day },
+  }));
+}
+
+const { day } = Astro.props;
+---
+
+<BaseLayout title={`Day ${day.id} • ${day.title} • Forgotten Bali`}>
+  <Header />
+  
+  <main class="bg-jungle-950 min-h-screen pt-20 md:pt-32 pb-32 md:pb-48">
+    <div class="max-w-6xl mx-auto px-6">
+      <div id={`day-${day.id}`} class="reveal active">
+        <!-- Title Section -->
+        <div class="relative flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-16">
+          <span class="absolute -top-6 -left-4 md:static text-rice-400 font-serif text-7xl md:text-9xl opacity-10 md:opacity-20 leading-none pointer-events-none">{day.id.toString().padStart(2, '0')}</span>
+          <div class="relative z-10 flex flex-col">
+             <p class="text-rice-400 text-[10px] md:text-xs tracking-[0.5em] uppercase font-bold mb-1 md:mb-2">The Path • Day {day.id}</p>
+             <h1 class="font-serif text-4xl md:text-8xl text-white tracking-tighter leading-tight">{day.title}</h1>
+          </div>
+        </div>
+        
+        <!-- Main Content Pair -->
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 mb-12 md:mb-24">
+          <!-- The Discovery -->
+          <div class="group">
+            <div class="aspect-[21/9] md:aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-4 md:mb-8 bg-volcanic-900 -mx-6 md:mx-0 shadow-2xl">
+              <img src={day.discovery.img} alt={day.discovery.alt} class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+            </div>
+            <p class="text-rice-300 text-[10px] md:text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-2 md:mb-6">{day.discovery.label}</p>
+            <p class="text-mist-50 text-lg md:text-3xl leading-relaxed font-light">{day.discovery.text}</p>
+          </div>
+          
+          <!-- The Sanctuary -->
+          <div class="group">
+            {day.sanctuary.type === 'end' ? (
+              <div class="flex items-center justify-center p-8 md:p-12 border-2 border-dashed border-white/10 rounded-sm aspect-[21/9] md:aspect-[16/9] md:h-full bg-white/5">
+                <div class="text-center">
+                  <p class="font-serif text-2xl md:text-4xl text-rice-400 mb-2 md:mb-4 italic">{day.sanctuary.title}</p>
+                  <p class="text-mist-300 text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 md:mb-8">{day.sanctuary.subtitle}</p>
+                  <p class="text-rice-300 font-serif text-lg md:text-xl italic">{day.sanctuary.footer}</p>
+                </div>
+              </div>
+            ) : (
+              <div class="flex flex-col h-full">
+                <div class="aspect-[21/9] md:aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-4 md:mb-8 bg-volcanic-900 -mx-6 md:mx-0 shadow-2xl">
+                  <img src={day.sanctuary.img} alt={day.sanctuary.alt} class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                </div>
+                <div class="flex-grow p-6 md:p-10 bg-white/5 border-l-2 border-rice-400 backdrop-blur-sm">
+                  <p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-2 md:mb-4">{day.sanctuary.label}</p>
+                  <h4 class="text-white font-serif text-2xl md:text-4xl mb-1 md:mb-3">{day.sanctuary.name}</h4>
+                  <p class="text-mist-200 text-sm md:text-base italic leading-relaxed">{day.sanctuary.desc}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Scrapbook Section -->
+        {day.scrapbook && day.scrapbook.length > 0 && (
+          <div class="mt-16 md:mt-32">
+            <p class="text-white/40 text-xs md:text-sm uppercase tracking-[0.5em] mb-6 md:mb-12 text-center font-bold">day {day.id} vibes:</p>
+            <ScrapbookGallery images={day.scrapbook} />
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <PathNavigator />
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</BaseLayout>

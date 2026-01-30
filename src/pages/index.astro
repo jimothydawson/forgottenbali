@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PathNavigator from '../components/PathNavigator.astro';
-import ScrapbookGallery from '../components/ScrapbookGallery.astro';
+import { itinerary } from '../data/itinerary';
 ---
 
 <BaseLayout title="Forgotten Bali | The Pilot Expedition">
@@ -23,7 +23,7 @@ import ScrapbookGallery from '../components/ScrapbookGallery.astro';
 					Forgotten Bali: <br class="hidden md:block"> The Pilot Expedition.
 				</h1>
 				<p class="text-mist-200 text-lg sm:text-2xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-					Not a tour. A road trip with friends. A curated 10-day journey into the misty ridges, hidden waterfalls, and sacred springs that healed me.
+					Not a tour. A road trip with friends. A curated 10-day journey into the misty ridges, hidden waterfalls, ancient temples and sacred springs.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-6 justify-center reveal">
 					<a href="#itinerary" class="bg-white text-jungle-900 px-10 py-5 rounded-sm font-medium text-sm uppercase tracking-widest hover:bg-rice-300 transition-all">
@@ -378,380 +378,35 @@ import ScrapbookGallery from '../components/ScrapbookGallery.astro';
 					</div>
 				</div>
 
-				<div class="space-y-48">
-					<!-- Day 1 -->
-					<div id="day-1" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">01</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">Arrival & The West Coast</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/WakaGangga/beach.jpg" alt="Tabanan Beach" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 01 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Gathering at the volcanic black sand shores of Tabanan. A slow decompression as the sun sets over the Indian Ocean.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/WakaGangga/pool.jpg" alt="WakaGangga" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 01 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">WakaGangga</h4>
-									<p class="text-mist-300 text-sm italic">Private villas tucked between the jungle and the surf.</p>
-								</div>
+				<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+					<div class="reveal">
+						<div class="relative group aspect-[16/9] overflow-hidden rounded-sm shadow-2xl bg-volcanic-800">
+							<img src="/assets/WakaGangga/beach.jpg" alt="Expedition Start" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+							<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-jungle-950/20 transition-colors"></div>
+							<div class="absolute inset-0 flex items-center justify-center">
+								<a href="/itinerary/1" class="bg-white text-jungle-900 px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-rice-400 transition-all transform hover:scale-105 shadow-2xl">
+									Begin the Journey
+								</a>
 							</div>
 						</div>
-
-						<!-- Day 1 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day1/beach-sunset.jpg", alt: "Sunset on the black sand", span: "full" },
-								{ src: "/assets/day1/james-sara-beach.jpg", alt: "Moments on the sand", span: "portrait" }
-							]} 
-						/>
 					</div>
-
-					<!-- Day 2 -->
-					<div id="day-2" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">02</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">The High Terraces</h3>
+					
+					<div class="reveal space-y-8">
+						<h3 class="font-serif text-4xl text-white">The Path is Mapped.</h3>
+						<p class="text-mist-200 text-xl font-light leading-relaxed">Each day has been curated to balance high-adrenaline discovery with profound sanctuary. We've mapped out the details into a granular, day-by-day guide.</p>
+						
+						<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
+							{itinerary.map(day => (
+								<a href={`/itinerary/${day.id}`} class="group relative aspect-square overflow-hidden border border-white/10 flex flex-col items-center justify-center transition-all rounded-xs">
+									<img src={day.discovery.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+									<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
+									<div class="relative z-10 flex flex-col items-center">
+										<span class="text-white font-serif text-2xl mb-1 group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{day.id}</span>
+										<span class="text-[9px] uppercase tracking-widest text-rice-400 group-hover:text-white transition-colors">Day</span>
+									</div>
+								</a>
+							))}
 						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/jatiluwih/landscape-1.avif" alt="Jatiluwih" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 02 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Morning exploration of Jatiluwih UNESCO rice terraces. An incredible drive ascending into the misty central highlands.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/munduk-moding/Sunset-View-1-1024x683.webp" alt="MMP Sunset" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 02 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Munduk Moding</h4>
-									<p class="text-mist-300 text-sm italic">Luxury perched 1,000 meters above the clouds.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 2 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day2/james-rice.jpg", alt: "James in the paddies", span: "full" },
-								{ src: "/assets/day2/jatiluwih-lunch.jpg", alt: "Lunch with a view", span: "full" },
-								{ src: "/assets/day2/james-friends-jatiluwih.jpg", alt: "The crew at Jatiluwih", span: "portrait" },
-								{ src: "/assets/day2/bayan-tree.jpg", alt: "The ancient Banyan", span: "portrait" },
-								{ src: "/assets/day2/james-nunu-jatiluwih.jpg", alt: "Local connections", span: "portrait" },
-								{ src: "/assets/day2/james-rice-sunset.jpg", alt: "Paddy sunset", span: "full" },
-								{ src: "/assets/day2/james-alix-jatiluwih-lunch.jpg", alt: "Alix at lunch", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 3 -->
-					<div id="day-3" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">03</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">Heritage & Harvest</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/munduk-moding/Coffee-Farmer-1024x683.webp" alt="Coffee Farmer" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 03 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">A deep dive into the working coffee plantation. Learning the secrets of Balinese harvest and mountain living.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/munduk-moding/Infinity-Pools-1024x683.webp" alt="MMP Pool" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 03 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Munduk Moding</h4>
-									<p class="text-mist-300 text-sm italic">The iconic infinity pool at dusk.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 3 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day3/yoga.jpg", alt: "Morning yoga in the mist", span: "portrait" },
-								{ src: "/assets/day3/ulekan-cocktails.jpg", alt: "Sundowners", span: "portrait" },
-								{ src: "/assets/day3/james-anna-kroya-waterfall.jpg", alt: "Waterfall adventures", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 4 -->
-					<div id="day-4" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">04</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">The Hidden Falls</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/banyumala/landscape.avif" alt="Banyumala" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 04 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Trekking through the lush valley to the twin falls of Banyumala. Pure water, silence, and jungle immersion.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/munduk-moding/Bali-Jacuzzi-1024x683.webp" alt="MMP Jacuzzi" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 04 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Munduk Moding</h4>
-									<p class="text-mist-300 text-sm italic">Warm soaks in the mountain mist.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 4 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day4/alix-waterfall-swim.jpg", alt: "Swimming in the wild", span: "portrait" },
-								{ src: "/assets/day4/alix-waterfall.jpg", alt: "Waterfall views", span: "portrait" },
-								{ src: "/assets/day3/banyumala.jpg", alt: "Banyumala waters", span: "full" },
-								{ src: "/assets/day4/james-alix-rice.jpg", alt: "Exploring the north", span: "portrait" },
-								{ src: "/assets/day4/munduk-lunch-alix.jpg", alt: "Mountain lunch", span: "portrait" },
-								{ src: "/assets/day4/james-north-beach.jpg", alt: "The rugged north coast", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 5 -->
-					<div id="day-5" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">05</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">The King's Descent</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/sekumpul/portrait-1.avif" alt="Sekumpul" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 05 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Conquering Sekumpul, Bali's most monumental waterfall. Crossing the ridge to the wild northern coastline.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/sanglung/pool.jpg" alt="Sanglung Pool" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 05 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Sanglung Villas</h4>
-									<p class="text-mist-300 text-sm italic">Absolute isolation on a remote northern ridge.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 5 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day5/sekumpul-overview.jpg", alt: "The mighty Sekumpul", span: "portrait" },
-								{ src: "/assets/day5/j-a-sekumpul-1.jpg", alt: "Trekking deep", span: "portrait" },
-								{ src: "/assets/day5/j-a-sekumpul-2.jpg", alt: "Under the falls", span: "portrait" },
-								{ src: "/assets/day5/j-a-sekumpul-3.jpg", alt: "Jungle paths", span: "portrait" },
-								{ src: "/assets/day5/j-a-sekumpul-4.jpg", alt: "Sekumpul scale", span: "portrait" },
-								{ src: "/assets/day5/alix-swim-view.jpg", alt: "Ridge pool views", span: "portrait" },
-								{ src: "/assets/day5/alix-waterfall-view.jpg", alt: "The view from above", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 6 -->
-					<div id="day-6" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">06</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">North Sea Silence</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/sanglung/ocean-view.jpg" alt="North Sea" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 06 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Sunrise snorkeling in the calm Tejakula lagoon followed by the discovery of Yeh Mampeh waterfalls.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/sanglung/pool-2.jpg" alt="Sanglung Sanctuary" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 06 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Sanglung Villas</h4>
-									<p class="text-mist-300 text-sm italic">Stars over the Bali Sea from your private deck.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 6 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day6/alix-james-waterfall.jpg", alt: "Refreshing dips", span: "portrait" },
-								{ src: "/assets/day6/james-anna-aling-aling-waterfall.jpg", alt: "North coast falls", span: "portrait" },
-								{ src: "/assets/day6/mt-agung-sunset.jpg", alt: "Agung at dusk", span: "full" },
-								{ src: "/assets/day6/james-north-beach-day.jpg", alt: "Empty beaches", span: "full" },
-								{ src: "/assets/day6/james-north-beach.jpg", alt: "The north coast", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 7 -->
-					<div id="day-7" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">07</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">The Caldera Crossing</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/kintamani/batur-caldera.jpg" alt="Batur Caldera" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 07 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Driving through the vast Kintamani caldera with a stop for the island's most dramatic views of Mount Batur.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/bambootel-sawah-view/room-exterior.jpg" alt="Bambootel" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 07 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Bambootel</h4>
-									<p class="text-mist-300 text-sm italic">Living bamboo architecture in the heart of Sebatu.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 7 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day7/dad-beer-kintamani.jpg", alt: "Beers with Dad at the Caldera", span: "full" },
-								{ src: "/assets/day7/james-nico-mt-agung.jpg", alt: "Ridge views", span: "full" },
-								{ src: "/assets/kintamani/akasa-kintamani.JPG", alt: "Coffee with family at Akasa", span: "full" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 8 -->
-					<div id="day-8" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">08</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">Sacred Springs</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/temples/temple-water-blessing.avif" alt="Temple Blessing" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 08 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Private dawn rituals at Bali's most sacred water temples. A day of spiritual connection.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/bambootel-sawah-view/aerial-pool.jpg" alt="Bambootel Pool" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 08 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Bambootel</h4>
-									<p class="text-mist-300 text-sm italic">Jungle immersion and sustainable luxury.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 8 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day8/mengening-holy-water-with-locals.jpg", alt: "Sacred moments", span: "portrait" },
-								{ src: "/assets/day8/mengening-locals.jpg", alt: "Local village life", span: "portrait" },
-								{ src: "/assets/day8/mengening-woman-holy-water.jpg", alt: "Spirituality", span: "portrait" },
-								{ src: "/assets/day8/temple-landscape.jpg", alt: "Ancient temples", span: "full" },
-								{ src: "/assets/bio/james-locals-galungan.jpg", alt: "Galungan connections", span: "full" },
-								{ src: "/assets/day8/lunch-group.jpg", alt: "Sharing a meal", span: "full" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 9 -->
-					<div id="day-9" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">09</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">The Soft Landing</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/temples/gunung-kawi-pool.avif" alt="Ridge Temples" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 09 • The Discovery</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">Final hidden temples of the central ridge before descending to the coast.</p>
-							</div>
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/maya-sanur/pool.jpg" alt="Maya Sanur" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<div class="p-8 bg-white/5 border-l-2 border-rice-400">
-									<p class="text-rice-300 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Night 09 • The Sanctuary</p>
-									<h4 class="text-white font-serif text-3xl mb-2">Maya Sanur</h4>
-									<p class="text-mist-300 text-sm italic">Beachfront elegance for our final farewell.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 9 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day9/gunung-kawi-friends.jpg", alt: "Friends at Gunung Kawi", span: "portrait" },
-								{ src: "/assets/day9/james-alix-maya.jpg", alt: "Arriving at the coast", span: "portrait" },
-								{ src: "/assets/day9/gunung-kawi-tampaksiring-carvings.jpg", alt: "Ancient carvings", span: "full" },
-								{ src: "/assets/day9/ubud-temple.jpg", alt: "Ubud spirituality", span: "portrait" },
-								{ src: "/assets/day9/ubud-temple-landscape.jpg", alt: "Sacred architecture", span: "full" },
-								{ src: "/assets/day9/maya-dessert.jpg", alt: "A sweet farewell", span: "portrait" },
-								{ src: "/assets/day9/dinner-group.jpg", alt: "The final dinner", span: "full" },
-								{ src: "/assets/day9/james-mum-sanur-beach.jpg", alt: "Mum in Sanur", span: "portrait" }
-							]} 
-						/>
-					</div>
-
-					<!-- Day 10 -->
-					<div id="day-10" class="reveal">
-						<div class="flex flex-col md:flex-row md:items-center gap-6 mb-12">
-							<span class="text-rice-400 font-serif text-6xl md:text-8xl opacity-20">10</span>
-							<h3 class="font-serif text-4xl md:text-6xl text-white tracking-tighter">Decompression</h3>
-						</div>
-						<div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-							<div class="group">
-								<div class="aspect-[16/9] overflow-hidden rounded-none md:rounded-sm mb-6 bg-volcanic-900 -mx-6 md:mx-0">
-									<img src="/assets/maya-sanur/pool-beach.jpg" alt="Sanur Sunrise" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-								</div>
-								<p class="text-rice-300 text-xs sm:text-sm tracking-[0.5em] uppercase font-bold mb-6">Day 10 • The Decompression</p>
-								<p class="text-mist-50 text-xl md:text-2xl leading-relaxed font-light">A final sunrise on the beach. Reflecting on the journey before private transfers home. Terima Kasih.</p>
-							</div>
-							<div class="flex items-center justify-center p-12 border-2 border-dashed border-white/10 rounded-sm">
-								<div class="text-center">
-									<p class="font-serif text-3xl text-rice-400 mb-2 italic">Journey End</p>
-									<p class="text-mist-400 text-xs uppercase tracking-[0.3em] mb-4">The Path is Mapped.</p>
-									<p class="text-rice-300 font-serif italic">Matur Suksma</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Day 10 Scrapbook -->
-						<ScrapbookGallery 
-							images={[
-								{ src: "/assets/day10/james-mum-maya-breakfast.jpg", alt: "Final breakfast with Mum", span: "portrait" }
-							]} 
-						/>
 					</div>
 				</div>
 			</div>
