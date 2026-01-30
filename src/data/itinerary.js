@@ -89,8 +89,7 @@ export const itinerary = [
             { src: "/assets/day4/alix-waterfall.jpg", alt: "Waterfall views", span: "portrait" },
             { src: "/assets/day3/banyumala.jpg", alt: "Banyumala waters", span: "full" },
             { src: "/assets/day4/james-alix-rice.jpg", alt: "Exploring the north", span: "portrait" },
-            { src: "/assets/day4/munduk-lunch-alix.jpg", alt: "Mountain lunch", span: "portrait" },
-            { src: "/assets/day4/james-north-beach.jpg", alt: "The rugged north coast", span: "portrait" }
+            { src: "/assets/day4/munduk-lunch-alix.jpg", alt: "Mountain lunch", span: "portrait" }
         ]
     },
     {
@@ -112,8 +111,6 @@ export const itinerary = [
         scrapbook: [
             { src: "/assets/day5/sekumpul-overview.jpg", alt: "The mighty Sekumpul", span: "portrait" },
             { src: "/assets/day5/j-a-sekumpul-1.jpg", alt: "Trekking deep", span: "portrait" },
-            { src: "/assets/day5/j-a-sekumpul-2.jpg", alt: "Under the falls", span: "portrait" },
-            { src: "/assets/day5/j-a-sekumpul-3.jpg", alt: "Jungle paths", span: "portrait" },
             { src: "/assets/day5/j-a-sekumpul-4.jpg", alt: "Sekumpul scale", span: "portrait" },
             { src: "/assets/day5/alix-swim-view.jpg", alt: "Ridge pool views", span: "portrait" },
             { src: "/assets/day5/alix-waterfall-view.jpg", alt: "The view from above", span: "portrait" }
