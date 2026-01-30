@@ -18,32 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initPathNavigator() {
     const navigator = document.getElementById('path-navigator');
     const navigatorMobile = document.getElementById('path-navigator-mobile');
-    const itinerarySection = document.getElementById('itinerary');
 
-    if (!navigator || !itinerarySection) return;
-
-    // Show/Hide navigator based on itinerary visibility
-    const visibilityObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navigator.classList.remove('opacity-0', 'translate-x-[-100%]');
-                navigator.classList.add('opacity-100', 'translate-x-0');
-                if (navigatorMobile) {
-                    navigatorMobile.classList.remove('opacity-0', 'translate-y-10');
-                    navigatorMobile.classList.add('opacity-100', 'translate-y-0');
-                }
-            } else {
-                navigator.classList.add('opacity-0', 'translate-x-[-100%]');
-                navigator.classList.remove('opacity-100', 'translate-x-0');
-                if (navigatorMobile) {
-                    navigatorMobile.classList.add('opacity-0', 'translate-y-10');
-                    navigatorMobile.classList.remove('opacity-100', 'translate-y-0');
-                }
-            }
-        });
-    }, { threshold: 0.05 });
-
-    visibilityObserver.observe(itinerarySection);
+    if (!navigator) return;
 
     // active state tracking
     const daySections = document.querySelectorAll('[id^="day-"]');

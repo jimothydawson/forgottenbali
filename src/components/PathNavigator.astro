@@ -2,7 +2,7 @@
 const days = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
-<div id="path-navigator" class="fixed left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-700 pointer-events-none opacity-0 translate-x-[-100%] md:translate-x-0 md:opacity-0 md:block">
+<div id="path-navigator" class="fixed left-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-700 pointer-events-none md:block">
   <div class="flex flex-col gap-3 p-3 bg-volcanic-900/40 backdrop-blur-md rounded-full border border-white/10 pointer-events-auto">
     {days.map((day) => (
       <a 
@@ -16,7 +16,7 @@ const days = Array.from({ length: 10 }, (_, i) => i + 1);
   </div>
 </div>
 
-<div id="path-navigator-mobile" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 pointer-events-none opacity-0 translate-y-10 md:hidden">
+<div id="path-navigator-mobile" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 pointer-events-none md:hidden">
   <div class="flex gap-2 p-2 bg-volcanic-900/60 backdrop-blur-xl rounded-full border border-white/10 pointer-events-auto overflow-x-auto max-w-[90vw] no-scrollbar">
     {days.map((day) => (
       <a 
