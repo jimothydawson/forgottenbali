@@ -14,31 +14,31 @@ const days = [
 ---
 
 <div id="path-navigator-unified" class="fixed bottom-0 left-0 w-full z-50 transition-all duration-700">
-  <div class="bg-volcanic-900/90 backdrop-blur-2xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-    <div class="max-w-screen-xl mx-auto px-4 py-3 sm:py-5">
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-12">
+  <div class="bg-volcanic-900/95 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_50px_rgba(0,0,0,0.6)]">
+    <div class="max-w-screen-2xl mx-auto px-4 py-2 sm:py-3">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
         <!-- Brand/Status -->
-        <div class="flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0 sm:min-w-[140px]">
-          <p class="text-rice-400 text-[9px] tracking-[0.4em] uppercase font-bold mb-1">The Expedition</p>
-          <div class="flex gap-4">
-             <a href="#the-insider" data-nav="the-insider" class="text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-rice-400 transition-all">Me</a>
-             <a href="#sanctuaries" data-nav="sanctuaries" class="text-[10px] font-bold uppercase tracking-widest text-mist-400 hover:text-white transition-all">Stays</a>
+        <div class="flex items-center gap-6 shrink-0">
+          <p class="hidden md:block text-rice-400 text-[10px] tracking-[0.5em] uppercase font-bold">The Path</p>
+          <div class="flex gap-6">
+             <a href="#the-insider" data-nav="the-insider" class="text-[11px] font-bold uppercase tracking-widest text-mist-300 hover:text-white transition-all">Me</a>
+             <a href="#sanctuaries" data-nav="sanctuaries" class="text-[11px] font-bold uppercase tracking-widest text-mist-300 hover:text-white transition-all">Stays</a>
           </div>
         </div>
 
         <!-- Itinerary Grid -->
-        <div class="flex-grow w-full">
-          <div class="grid grid-cols-5 md:grid-cols-10 gap-1.5 sm:gap-3">
+        <div class="w-full max-w-4xl">
+          <div class="grid grid-cols-10 gap-1 sm:gap-2 md:gap-3">
             {days.map((day) => (
               <a 
                 href={`#day-${day.id}`} 
                 data-day={day.id}
-                class="relative aspect-[4/3] group overflow-hidden rounded-xs sm:rounded-sm border border-white/5 transition-all duration-500 hover:scale-105 active:scale-95"
+                class="relative aspect-[4/3] group overflow-hidden rounded-xs border border-white/5 transition-all duration-500 hover:scale-110 active:scale-95 shadow-lg"
               >
-                <img src={day.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <img src={day.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
                 <div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-transparent transition-all duration-500"></div>
                 <div class="relative z-10 flex items-center justify-center h-full">
-                  <span class="text-[10px] sm:text-xs font-serif italic text-white group-hover:text-rice-400 group-hover:text-sm transition-all duration-300 drop-shadow-lg">{day.id}</span>
+                  <span class="text-xs sm:text-sm md:text-base font-serif italic text-white group-hover:text-rice-400 group-active:text-rice-400 transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{day.id}</span>
                 </div>
               </a>
             ))}
@@ -53,7 +53,8 @@ const days = [
   #path-navigator-unified .active {
     border-color: var(--color-rice-400) !important;
     background-color: var(--color-rice-400) !important;
-    transform: scale(1.1);
+    transform: scale(1.15);
+    z-index: 20;
   }
   
   #path-navigator-unified .active img {
@@ -62,11 +63,13 @@ const days = [
   
   #path-navigator-unified .active span {
     color: var(--color-jungle-900) !important;
-    font-weight: 800;
+    font-weight: 900;
+    text-shadow: none;
   }
 
   a[data-nav].active {
     color: var(--color-rice-400) !important;
-    background: transparent !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 </style>
