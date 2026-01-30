@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PathNavigator from '../components/PathNavigator.astro';
+import ScrapbookGallery from '../components/ScrapbookGallery.astro';
 ---
 
 <BaseLayout title="Forgotten Bali | The Pilot Expedition">
@@ -403,6 +404,13 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 1 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day1/beach-sunset.jpg", alt: "Sunset on the black sand", span: "full" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 2 -->
@@ -430,6 +438,18 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 2 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day2/james-rice.jpg", alt: "James in the paddies", span: "half" },
+								{ src: "/assets/day2/jatiluwih-lunch.jpg", alt: "Lunch with a view", span: "half" },
+								{ src: "/assets/day2/james-friends-jatiluwih.jpg", alt: "The crew at Jatiluwih", span: "full" },
+								{ src: "/assets/day2/bayan-tree.jpg", alt: "The ancient Banyan", span: "third" },
+								{ src: "/assets/day2/james-nunu-jatiluwih.jpg", alt: "Local connections", span: "third" },
+								{ src: "/assets/day2/james-rice-sunset.jpg", alt: "Paddy sunset", span: "third" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 3 -->
@@ -457,6 +477,15 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 3 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day3/yoga.jpg", alt: "Morning yoga in the mist", span: "half" },
+								{ src: "/assets/day3/ulekan-cocktails.jpg", alt: "Sundowners", span: "half" },
+								{ src: "/assets/day3/james-anna-kroya-waterfall.jpg", alt: "Waterfall adventures", span: "full" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 4 -->
@@ -484,6 +513,16 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 4 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day4/alix-waterfall-swim.jpg", alt: "Swimming in the wild", span: "portrait" },
+								{ src: "/assets/day4/james-alix-rice.jpg", alt: "Exploring the north", span: "half" },
+								{ src: "/assets/day4/munduk-lunch-alix.jpg", alt: "Mountain lunch", span: "half" },
+								{ src: "/assets/day4/james-north-beach.jpg", alt: "The rugged north coast", span: "full" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 5 -->
@@ -511,6 +550,18 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 5 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day5/sekumpul-overview.jpg", alt: "The mighty Sekumpul", span: "full" },
+								{ src: "/assets/day5/j-a-sekumpul-1.jpg", alt: "Trekking deep", span: "third" },
+								{ src: "/assets/day5/j-a-sekumpul-2.jpg", alt: "Under the falls", span: "third" },
+								{ src: "/assets/day5/j-a-sekumpul-3.jpg", alt: "Jungle paths", span: "third" },
+								{ src: "/assets/day5/alix-swim-view.jpg", alt: "Ridge pool views", span: "half" },
+								{ src: "/assets/day5/alix-waterfall-view.jpg", alt: "The view from above", span: "half" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 6 -->
@@ -538,6 +589,16 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 6 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day6/alix-james-waterfall.jpg", alt: "Refreshing dips", span: "half" },
+								{ src: "/assets/day6/james-anna-aling-aling-waterfall.jpg", alt: "North coast falls", span: "half" },
+								{ src: "/assets/day6/mt-agung-sunset.jpg", alt: "Agung at dusk", span: "full" },
+								{ src: "/assets/day6/james-north-beach-day.jpg", alt: "Empty beaches", span: "full" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 7 -->
@@ -565,6 +626,14 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 7 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day7/dad-beer-kintamani.jpg", alt: "Beers with Dad at the Caldera", span: "half" },
+								{ src: "/assets/day7/james-nico-mt-agung.jpg", alt: "Ridge views", span: "half" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 8 -->
@@ -592,6 +661,17 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 8 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day8/mengening-holy-water-with-locals.jpg", alt: "Sacred moments", span: "full" },
+								{ src: "/assets/day8/mengening-locals.jpg", alt: "Local village life", span: "third" },
+								{ src: "/assets/day8/mengening-woman-holy-water.jpg", alt: "Spirituality", span: "third" },
+								{ src: "/assets/day8/temple-landscape.jpg", alt: "Ancient temples", span: "third" },
+								{ src: "/assets/day8/lunch-group.jpg", alt: "Sharing a meal", span: "full" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 9 -->
@@ -619,6 +699,20 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 9 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day9/gunung-kawi-friends.jpg", alt: "Friends at Gunung Kawi", span: "half" },
+								{ src: "/assets/day9/james-alix-maya.jpg", alt: "Arriving at the coast", span: "half" },
+								{ src: "/assets/day9/gunung-kawi-tampaksiring-carvings.jpg", alt: "Ancient carvings", span: "full" },
+								{ src: "/assets/day9/ubud-temple.jpg", alt: "Ubud spirituality", span: "third" },
+								{ src: "/assets/day9/ubud-temple-landscape.jpg", alt: "Sacred architecture", span: "third" },
+								{ src: "/assets/day9/maya-dessert.jpg", alt: "A sweet farewell", span: "third" },
+								{ src: "/assets/day9/dinner-group.jpg", alt: "The final dinner", span: "full" },
+								{ src: "/assets/day9/james-mum-sanur-beach.jpg", alt: "Mum in Sanur", span: "half" }
+							]} 
+						/>
 					</div>
 
 					<!-- Day 10 -->
@@ -643,6 +737,13 @@ import PathNavigator from '../components/PathNavigator.astro';
 								</div>
 							</div>
 						</div>
+
+						<!-- Day 10 Scrapbook -->
+						<ScrapbookGallery 
+							images={[
+								{ src: "/assets/day10/james-mum-maya-breakfast.jpg", alt: "Final breakfast with Mum", span: "full" }
+							]} 
+						/>
 					</div>
 				</div>
 			</div>
