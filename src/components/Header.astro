@@ -24,7 +24,13 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle Menu">
+            <button
+                id="mobile-menu-btn"
+                class="md:hidden flex flex-col gap-1.5 p-2"
+                aria-label="Toggle Menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
                 <div id="bar-1" class="w-6 h-px bg-rice-400 transition-all duration-300"></div>
                 <div id="bar-2" class="w-6 h-px bg-rice-400 transition-all duration-300"></div>
             </button>
@@ -32,8 +38,8 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-jungle-950 z-[60] hidden flex-col items-center justify-center space-y-12">
-        <button id="mobile-menu-close" class="absolute top-8 right-8 text-rice-400 p-2">
+    <div id="mobile-menu" class="fixed inset-0 bg-jungle-950 z-[60] hidden flex-col items-center justify-center space-y-12" role="dialog" aria-label="Navigation menu">
+        <button id="mobile-menu-close" class="absolute top-8 right-8 text-rice-400 p-2" aria-label="Close menu">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
         
@@ -52,25 +58,38 @@
     const closeBtn = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
+    function openMenu() {
+        if (!mobileMenu || !menuBtn) return;
+        mobileMenu.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
     }
 
-    if (closeBtn && mobileMenu) {
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = '';
-        });
+    function closeMenu() {
+        if (!mobileMenu || !menuBtn) return;
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        menuBtn.focus();
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', openMenu);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
     }
 
     // Close on link click
     mobileMenu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            closeMenu();
+        }
     });
 </script>

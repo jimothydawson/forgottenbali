@@ -13,7 +13,8 @@ export const itinerary = [
             alt: "WakaGangga",
             label: "Night 01 • The Sanctuary",
             name: "WakaGangga",
-            desc: "Private villas tucked between the jungle and the surf."
+            desc: "Private villas tucked between the jungle and the surf.",
+            rating: 4
         },
         scrapbook: [
             { src: "/assets/day1/beach-sunset.jpg", alt: "Sunset on the black sand", span: "full" },
@@ -34,7 +35,8 @@ export const itinerary = [
             alt: "MMP Sunset",
             label: "Night 02 • The Sanctuary",
             name: "Munduk Moding",
-            desc: "Luxury perched 1,000 meters above the clouds."
+            desc: "Luxury perched 1,000 meters above the clouds.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day2/james-rice.jpg", alt: "James in the paddies", span: "full" },
@@ -60,7 +62,8 @@ export const itinerary = [
             alt: "MMP Pool",
             label: "Night 03 • The Sanctuary",
             name: "Munduk Moding",
-            desc: "The iconic infinity pools from above."
+            desc: "The iconic infinity pools from above.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day3/yoga.jpg", alt: "Morning yoga in the mist", span: "portrait" },
@@ -82,7 +85,8 @@ export const itinerary = [
             alt: "MMP Jacuzzi",
             label: "Night 04 • The Sanctuary",
             name: "Munduk Moding",
-            desc: "Warm soaks in the mountain mist."
+            desc: "Warm soaks in the mountain mist.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day4/alix-waterfall-swim.jpg", alt: "Swimming in the wild", span: "portrait" },
@@ -106,7 +110,8 @@ export const itinerary = [
             alt: "Sanglung Pool",
             label: "Night 05 • The Sanctuary",
             name: "Sanglung Villas",
-            desc: "Absolute seclusion on a remote northern ridge."
+            desc: "Absolute seclusion on a remote northern ridge.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day5/sekumpul-overview.jpg", alt: "The mighty Sekumpul", span: "portrait" },
@@ -130,7 +135,8 @@ export const itinerary = [
             alt: "Sanglung Sanctuary",
             label: "Night 06 • The Sanctuary",
             name: "Sanglung Villas",
-            desc: "Stars over the Bali Sea from your private deck."
+            desc: "Stars over the Bali Sea from your private deck.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day6/alix-james-waterfall.jpg", alt: "Refreshing dips", span: "portrait" },
@@ -154,7 +160,8 @@ export const itinerary = [
             alt: "Bambootel",
             label: "Night 07 • The Sanctuary",
             name: "Bambootel",
-            desc: "Living bamboo architecture in the heart of Sebatu."
+            desc: "Living bamboo architecture in the heart of Tampaksiring.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day7/dad-beer-kintamani.jpg", alt: "Beers with Dad at the Caldera", span: "full" },
@@ -176,7 +183,8 @@ export const itinerary = [
             alt: "Bambootel Pool",
             label: "Night 08 • The Sanctuary",
             name: "Bambootel",
-            desc: "Jungle immersion and sustainable luxury."
+            desc: "Jungle immersion and sustainable luxury.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day8/mengening-holy-water-with-locals.jpg", alt: "Sacred moments", span: "portrait" },
@@ -201,7 +209,8 @@ export const itinerary = [
             alt: "Maya Sanur",
             label: "Night 09 • The Sanctuary",
             name: "Maya Sanur",
-            desc: "Beachfront elegance for our final farewell."
+            desc: "Beachfront elegance for our final farewell.",
+            rating: 5
         },
         scrapbook: [
             { src: "/assets/day9/gunung-kawi-friends.jpg", alt: "Friends at Gunung Kawi", span: "portrait" },
@@ -210,8 +219,7 @@ export const itinerary = [
             { src: "/assets/day9/ubud-temple.jpg", alt: "Ubud spirituality", span: "portrait" },
             { src: "/assets/day9/ubud-temple-landscape.jpg", alt: "Sacred architecture", span: "full" },
             { src: "/assets/day9/maya-dessert.jpg", alt: "A sweet farewell", span: "portrait" },
-            { src: "/assets/day9/dinner-group.jpg", alt: "The final dinner", span: "full" },
-            { src: "/assets/day9/james-mum-sanur-beach.jpg", alt: "Mum in Sanur", span: "portrait" }
+            { src: "/assets/day9/dinner-group.jpg", alt: "The final dinner", span: "full" }
         ]
     },
     {
@@ -230,7 +238,8 @@ export const itinerary = [
             footer: "Matur Suksma"
         },
         scrapbook: [
-            { src: "/assets/day10/james-mum-maya-breakfast.jpg", alt: "Final breakfast with Mum", span: "portrait" }
+            { src: "/assets/day10/james-mum-maya-breakfast.jpg", alt: "Final breakfast with Mum", span: "portrait" },
+            { src: "/assets/day9/james-mum-sanur-beach.jpg", alt: "Mum in Sanur", span: "portrait" }
         ]
     }
 ];

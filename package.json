@@ -1,7 +1,10 @@
 {
-  "name": "vigorous-venus",
+  "name": "forgotten-bali",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Forgotten Bali - A curated 10-day pilot expedition into the misty ridges and hidden waterfalls of Northern Bali.",
+  "author": "James Dawson",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

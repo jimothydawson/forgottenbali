@@ -9,7 +9,7 @@ import { itinerary } from '../data/itinerary';
 <BaseLayout title="Forgotten Bali | The Pilot Expedition">
 	<Header />
 	<PathNavigator />
-	<main>
+	<main id="main-content">
 		<!-- Hero Section -->
 		<section class="relative h-screen flex items-center justify-center overflow-hidden">
 			<div class="absolute inset-0">
@@ -43,6 +43,30 @@ import { itinerary } from '../data/itinerary';
 			</div>
 		</section>
 
+		<!-- Trip Facts Band -->
+		<section class="bg-jungle-950 border-y border-white/5">
+			<div class="max-w-7xl mx-auto px-6 py-10">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+					<div class="reveal">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Dates</p>
+						<p class="text-white text-lg font-serif">Apr 4–13, 2026</p>
+					</div>
+					<div class="reveal">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Group Size</p>
+						<p class="text-white text-lg font-serif">Only 8 guests</p>
+					</div>
+					<div class="reveal">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Style</p>
+						<p class="text-white text-lg font-serif">Curated road trip</p>
+					</div>
+					<div class="reveal">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Pace</p>
+						<p class="text-white text-lg font-serif">Active + restorative</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Manifesto Section -->
 		<section id="manifesto" class="py-32 bg-volcanic-900 overflow-hidden">
 			<div class="max-w-4xl mx-auto px-6">
@@ -51,10 +75,21 @@ import { itinerary } from '../data/itinerary';
 					<h2 class="font-serif text-5xl md:text-7xl text-white mb-12 reveal tracking-tighter">I'm opening up <br class="md:hidden"> my black book.</h2>
 					<div class="space-y-10 text-xl md:text-2xl font-light text-mist-200 leading-relaxed max-w-2xl mx-auto">
 						<p class="reveal">For the last four years, I’ve been scouting the Deep North—taking my mum to the temples, my mates to the waterfalls, and my partners to the most romantic mountain cabins.</p>
-						<p class="reveal font-serif italic text-white text-2xl md:text-3xl">"Now, I’m inviting a small group of only 4-9 people from home to come with me."</p>
+						<p class="reveal font-serif italic text-white text-2xl md:text-3xl">"Now, I’m inviting a small group of only 8 people from home to come with me."</p>
 						<p class="reveal text-lg text-mist-400">We’ll stay in the same world-class sanctuaries I take my family to, but we’ll travel like locals. No rigid flags, no tourist traps—just a private circuit of the island’s most beautiful corners.</p>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Mid-Page CTA -->
+		<section class="py-16 bg-volcanic-950 border-y border-white/5">
+			<div class="max-w-5xl mx-auto px-6 text-center">
+				<p class="text-rice-400 text-[10px] tracking-[0.3em] uppercase mb-4 font-bold">Ready for the invite?</p>
+				<h3 class="font-serif text-3xl md:text-4xl text-white mb-8">Let’s see if the expedition is a fit.</h3>
+				<a href="#apply" class="inline-block bg-rice-400 text-jungle-900 px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.25em] hover:bg-white transition-all">
+					Apply for a Spot
+				</a>
 			</div>
 		</section>
 
@@ -65,18 +100,18 @@ import { itinerary } from '../data/itinerary';
 					<div class="relative reveal">
 						<div class="aspect-[4/5] overflow-hidden rounded-sm transition-all duration-1000 shadow-2xl">
 							<div id="bio-frame" class="w-full h-full relative rotating-frame">
-								<img src="/assets/bio/webp/IMG_0515.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover">
-								<img src="/assets/bio/webp/IMG_0643.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0722.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0734.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0745.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0746.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0755.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0785.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0801.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0806.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0850.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
-								<img src="/assets/bio/webp/IMG_0857.webp" alt="James Dawson" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0515.webp" alt="James Dawson exploring Bali" class="absolute inset-0 w-full h-full object-cover">
+							<img src="/assets/bio/webp/IMG_0643.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0722.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0734.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0745.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0746.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0755.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0785.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0801.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0806.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0850.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
+							<img src="/assets/bio/webp/IMG_0857.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-0">
 							</div>
 						</div>
 						<div class="absolute -bottom-6 -right-6 bg-rice-400 text-jungle-900 p-8 hidden md:block">
@@ -92,6 +127,52 @@ import { itinerary } from '../data/itinerary';
 							<p>This isn't just a route I’ve planned; it’s a collection of memories. It’s where I brought my dad for a Bintang on a volcano rim when he was sick. It’s the quiet temples I retreated to when I lost him. It’s the hidden valleys where I’ve taken my closest friends to show them what this island is actually capable of.</p>
 							<p>I’m opening this pilot trip to my community in Manly because I want to show you the Bali that exists beyond the traffic. I don't run tours; I run expeditions. I handle the logistics, the safety, and the timing—you just need to show up.</p>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Who It's For -->
+		<section id="fit" class="py-32 bg-jungle-900 border-y border-white/5">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Fit Check</p>
+					<h2 class="font-serif text-5xl md:text-6xl text-white tracking-tighter">Who This Is For.</h2>
+				</div>
+				<div class="grid md:grid-cols-2 gap-12">
+					<div class="reveal p-8 bg-volcanic-900/60 border border-white/5 rounded-sm">
+						<h3 class="font-serif text-2xl text-white mb-6">It’s for you if…</h3>
+						<ul class="space-y-4 text-mist-200 text-sm">
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You want hidden locations and fewer crowds without sacrificing comfort.
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You’re open to early starts, short hikes, and spontaneous moments.
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You value a curated, small-group vibe over a traditional tour.
+							</li>
+						</ul>
+					</div>
+					<div class="reveal p-8 bg-volcanic-900/60 border border-white/5 rounded-sm">
+						<h3 class="font-serif text-2xl text-white mb-6">It’s not ideal if…</h3>
+						<ul class="space-y-4 text-mist-200 text-sm">
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You prefer rigid schedules or large, bus-style groups.
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You want nightlife-focused travel rather than nature immersion.
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
+								You need fully guided, low-movement days every day.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -186,18 +267,18 @@ import { itinerary } from '../data/itinerary';
 
 					<!-- Navigation Buttons -->
 					<div class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 lg:-left-20">
-						<button id="prev-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors">
-							<svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
-							</svg>
-						</button>
+					<button id="prev-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors" aria-label="Previous review">
+						<svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+						</svg>
+					</button>
 					</div>
 					<div class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 lg:-right-20">
-						<button id="next-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors">
-							<svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
-							</svg>
-						</button>
+					<button id="next-review" class="p-4 text-white/20 hover:text-rice-400 transition-colors" aria-label="Next review">
+						<svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+						</svg>
+					</button>
 					</div>
 				</div>
 			</div>
@@ -218,10 +299,10 @@ import { itinerary } from '../data/itinerary';
 							<div class="flex items-center gap-2 mb-4">
 								<h3 class="font-serif text-4xl text-white">WakaGangga</h3>
 								<div class="flex text-rice-400 gap-1 ml-4">
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
 							<p class="text-mist-200 text-xl font-light max-w-3xl">Traditional luxury meets the wild black sand coast. Hand-carved villas tucked between the Indian Ocean and the rice paddies of Tabanan.</p>
@@ -247,11 +328,11 @@ import { itinerary } from '../data/itinerary';
 							<div class="flex items-center gap-2 mb-4">
 								<h3 class="font-serif text-4xl text-white">Munduk Moding Plantation</h3>
 								<div class="flex text-rice-400 gap-1 ml-4">
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
 							<p class="text-mist-200 text-xl font-light max-w-3xl leading-relaxed">Perched 1,000 meters above the clouds on a working coffee plantation. Home to Bali's most iconic infinity pool and the freshest mountain air.</p>
@@ -277,10 +358,11 @@ import { itinerary } from '../data/itinerary';
 							<div class="flex items-center gap-2 mb-4">
 								<h3 class="font-serif text-4xl text-white">Sanglung Villas</h3>
 								<div class="flex text-rice-400 gap-1 ml-4">
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
 							<p class="text-mist-200 text-xl font-light max-w-3xl">Absolute seclusion on a rugged northern ridge. Private infinity pools that seem to fall directly into the Bali Sea below.</p>
@@ -306,14 +388,14 @@ import { itinerary } from '../data/itinerary';
 							<div class="flex items-center gap-2 mb-4">
 								<h3 class="font-serif text-4xl text-white">Bambootel</h3>
 								<div class="flex text-rice-400 gap-1 ml-4">
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
-							<p class="text-mist-200 text-xl font-light max-w-3xl leading-relaxed">A sustainable masterpiece of living bamboo architecture in Sebatu. Immersed in the jungle with views overlooking the sacred UNESCO river valley.</p>
+							<p class="text-mist-200 text-xl font-light max-w-3xl leading-relaxed">A sustainable masterpiece of living bamboo architecture in Tampaksiring. Immersed in the jungle with views overlooking the sacred UNESCO river valley.</p>
 						</div>
 						<div class="lg:col-span-12">
 							<div class="grid md:grid-cols-2 gap-8">
@@ -336,11 +418,11 @@ import { itinerary } from '../data/itinerary';
 							<div class="flex items-center gap-2 mb-4">
 								<h3 class="font-serif text-4xl text-white">Maya Sanur</h3>
 								<div class="flex text-rice-400 gap-1 ml-4">
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
 							<p class="text-mist-200 text-xl font-light max-w-3xl">Modern beachfront elegance where the morning sun greets the calm lagoon. A perfect soft landing for our final reflection by the sea.</p>
@@ -376,6 +458,25 @@ import { itinerary } from '../data/itinerary';
 					</div>
 				</div>
 
+				<div class="mb-16 grid sm:grid-cols-4 gap-6 text-center reveal">
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 1–2</p>
+						<p class="text-white font-serif text-xl">Coast & black sand</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 3–6</p>
+						<p class="text-white font-serif text-xl">Misty ridges</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 7–8</p>
+						<p class="text-white font-serif text-xl">Temples & falls</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 9–10</p>
+						<p class="text-white font-serif text-xl">Soft landing by sea</p>
+					</div>
+				</div>
+
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 					<div class="reveal">
 						<div class="relative group aspect-[16/9] overflow-hidden rounded-sm shadow-2xl bg-volcanic-800">
@@ -406,6 +507,39 @@ import { itinerary } from '../data/itinerary';
 							))}
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section id="faq" class="py-32 bg-jungle-800 border-y border-white/5">
+			<div class="max-w-5xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">FAQ</p>
+					<h2 class="font-serif text-5xl md:text-6xl text-white tracking-tighter">Good Questions.</h2>
+				</div>
+				<div class="grid md:grid-cols-2 gap-10">
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">What’s the fitness level?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">Moderate. Expect early starts, a few short hikes, and some uneven paths. Nothing extreme, but you should be comfortable moving each day.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">How do rooms work?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">Choose twin share or private. Couples can share; solo guests can book a private room.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">Is this a group tour?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">It’s a hosted expedition with a tight group and a flexible flow. Think friends on a road trip with a local insider running logistics.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">What about safety?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">Routes are pre-scouted, transport is private, and timing avoids crowds. We can talk through any concerns before you commit.</p>
+					</div>
+				</div>
+				<div class="text-center mt-12">
+					<a href="#apply" class="inline-block border border-white/30 text-white px-10 py-5 rounded-sm font-medium text-xs uppercase tracking-[0.25em] hover:bg-white hover:text-jungle-900 transition-all">
+						Message James
+					</a>
 				</div>
 			</div>
 		</section>

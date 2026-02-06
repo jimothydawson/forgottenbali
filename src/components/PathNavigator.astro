@@ -1,16 +1,10 @@
 ---
-const days = [
-  { id: 1, img: "/assets/WakaGangga/beach.jpg" },
-  { id: 2, img: "/assets/jatiluwih/landscape-1.avif" },
-  { id: 3, img: "/assets/day3/yoga.jpg" },
-  { id: 4, img: "/assets/day3/banyumala.jpg" },
-  { id: 5, img: "/assets/sekumpul/portrait-1.avif" },
-  { id: 6, img: "/assets/sanglung/ocean-view.jpg" },
-  { id: 7, img: "/assets/kintamani/batur-caldera.jpg" },
-  { id: 8, img: "/assets/temples/temple-water-blessing.avif" },
-  { id: 9, img: "/assets/maya-sanur/pool.jpg" },
-  { id: 10, img: "/assets/maya-sanur/pool-beach.jpg" }
-];
+import { itinerary } from '../data/itinerary';
+
+const days = itinerary.map((day) => ({
+  id: day.id,
+  img: day.discovery.img,
+}));
 
 const { pathname } = Astro.url;
 const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').filter(Boolean).pop() : null;
@@ -22,14 +16,14 @@ const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').fi
     <div class="bg-rice-400 text-jungle-900 p-6 shadow-2xl rounded-sm relative overflow-hidden group">
       <div class="absolute top-0 left-0 w-1 h-full bg-white/20"></div>
       <p class="font-serif text-lg italic leading-tight pr-6">Use these numbered paths to discover each day of the journey.</p>
-      <button id="close-onboarding" class="absolute top-4 right-4 text-jungle-900/40 hover:text-jungle-900 transition-colors">
+      <button id="close-onboarding" class="absolute top-4 right-4 text-jungle-900/40 hover:text-jungle-900 transition-colors" aria-label="Dismiss tip">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     </div>
     <div class="w-4 h-4 bg-rice-400 rotate-45 absolute -bottom-2 left-1/2 -translate-x-1/2"></div>
   </div>
 
-  <div class="bg-volcanic-900/95 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_50px_rgba(0,0,0,0.6)]">
+  <nav class="bg-volcanic-900/95 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_50px_rgba(0,0,0,0.6)]" aria-label="Itinerary day navigation">
     <div class="max-w-screen-2xl mx-auto px-4 py-3 sm:py-4">
       <div class="flex items-center justify-center">
         <!-- Itinerary Grid -->
@@ -42,8 +36,10 @@ const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').fi
                   href={`/itinerary/${day.id}`} 
                   data-day={day.id}
                   class={`relative aspect-[4/3] group overflow-hidden rounded-xs border border-white/5 transition-all duration-500 hover:scale-110 active:scale-95 shadow-lg ${isActive ? 'active' : ''}`}
+                  aria-label={`Day ${day.id}`}
+                  aria-current={isActive ? 'page' : undefined}
                 >
-                  <img src={day.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src={day.img} alt="" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" />
                   <div class={`absolute inset-0 transition-all duration-500 ${isActive ? 'bg-transparent' : 'bg-jungle-950/40 group-hover:bg-transparent'}`}></div>
                   <div class="relative z-10 flex items-center justify-center h-full">
                     <span class={`text-xs sm:text-base md:text-lg font-serif italic text-white group-hover:text-rice-400 group-active:text-rice-400 transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${isActive ? '!text-jungle-900 font-black drop-shadow-none' : ''}`}>{day.id}</span>
@@ -55,14 +51,21 @@ const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').fi
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </div>
 
 <script>
   function initOnboarding() {
     const popup = document.getElementById('itinerary-onboarding');
     const closeBtn = document.getElementById('close-onboarding');
-    const hasSeenOnboarding = localStorage.getItem('seen-itinerary-onboarding');
+
+    let hasSeenOnboarding;
+    try {
+      hasSeenOnboarding = localStorage.getItem('seen-itinerary-onboarding');
+    } catch {
+      // localStorage unavailable (e.g. SSR or privacy mode)
+      hasSeenOnboarding = true;
+    }
 
     if (popup && !hasSeenOnboarding) {
       setTimeout(() => {
@@ -78,7 +81,11 @@ const currentDayId = pathname.startsWith('/itinerary/') ? pathname.split('/').fi
         popup.classList.add('opacity-0', 'translate-y-4');
         popup.classList.remove('opacity-100', 'translate-y-0');
         setTimeout(() => popup.classList.add('hidden'), 700);
-        localStorage.setItem('seen-itinerary-onboarding', 'true');
+        try {
+          localStorage.setItem('seen-itinerary-onboarding', 'true');
+        } catch {
+          // ignore
+        }
       };
 
       if (closeBtn) closeBtn.onclick = closePopup;
