@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PathNavigator from '../components/PathNavigator.astro';
 import { itinerary } from '../data/itinerary';
+import { siteConfig } from '../data/config';
 ---
 
 <BaseLayout title="Forgotten Bali | The Pilot Expedition">
@@ -18,7 +19,7 @@ import { itinerary } from '../data/itinerary';
 			</div>
 
 			<div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-				<p class="text-rice-300 text-[10px] tracking-[0.5em] uppercase mb-8 font-semibold">Limited to 8 Guests • April 4–13, 2026</p>
+				<p class="text-rice-300 text-[10px] tracking-[0.5em] uppercase mb-8 font-semibold">Limited to 8 Guests &bull; April 4&#8211;13, 2026</p>
 				<h1 class="font-serif text-5xl sm:text-7xl md:text-8xl text-white mb-8 leading-[0.9] tracking-tighter">
 					Forgotten Bali: <br class="hidden md:block"> The Pilot Expedition.
 				</h1>
@@ -30,7 +31,7 @@ import { itinerary } from '../data/itinerary';
 						View the Path
 					</a>
 					<a href="#apply" class="border border-white/30 text-white px-10 py-5 rounded-sm font-medium text-sm uppercase tracking-widest hover:bg-white hover:text-jungle-900 transition-all">
-						Message James
+						Chat with James
 					</a>
 				</div>
 			</div>
@@ -49,15 +50,15 @@ import { itinerary } from '../data/itinerary';
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
 					<div class="reveal">
 						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Dates</p>
-						<p class="text-white text-lg font-serif">Apr 4–13, 2026</p>
+						<p class="text-white text-lg font-serif">Apr 4&#8211;13, 2026</p>
 					</div>
 					<div class="reveal">
 						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Group Size</p>
 						<p class="text-white text-lg font-serif">Only 8 guests</p>
 					</div>
 					<div class="reveal">
-						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Style</p>
-						<p class="text-white text-lg font-serif">Curated road trip</p>
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Season</p>
+						<p class="text-white text-lg font-serif">Ideal post-wet</p>
 					</div>
 					<div class="reveal">
 						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Pace</p>
@@ -71,12 +72,12 @@ import { itinerary } from '../data/itinerary';
 		<section id="manifesto" class="py-32 bg-volcanic-900 overflow-hidden">
 			<div class="max-w-4xl mx-auto px-6">
 				<div class="text-center">
-					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold reveal">The Insider's Run</p>
-					<h2 class="font-serif text-5xl md:text-7xl text-white mb-12 reveal tracking-tighter">I'm opening up <br class="md:hidden"> my black book.</h2>
+					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold reveal">The Insider&#8217;s Run</p>
+					<h2 class="font-serif text-5xl md:text-7xl text-white mb-12 reveal tracking-tighter">I&#8217;m opening up <br class="md:hidden"> my black book.</h2>
 					<div class="space-y-10 text-xl md:text-2xl font-light text-mist-200 leading-relaxed max-w-2xl mx-auto">
-						<p class="reveal">For the last four years, I’ve been scouting the Deep North—taking my mum to the temples, my mates to the waterfalls, and my partners to the most romantic mountain cabins.</p>
-						<p class="reveal font-serif italic text-white text-2xl md:text-3xl">"Now, I’m inviting a small group of only 8 people from home to come with me."</p>
-						<p class="reveal text-lg text-mist-400">We’ll stay in the same world-class sanctuaries I take my family to, but we’ll travel like locals. No rigid flags, no tourist traps—just a private circuit of the island’s most beautiful corners.</p>
+						<p class="reveal">For the last four years, I&#8217;ve been scouting the Deep North&#8212;taking my mum to the temples, my mates to the waterfalls, and my partners to the most romantic mountain cabins.</p>
+						<p class="reveal font-serif italic text-white text-2xl md:text-3xl">&#8220;Now, I&#8217;m inviting a small group of only 8 people from home to come with me.&#8221;</p>
+						<p class="reveal text-lg text-mist-400">We&#8217;ll stay in the same world-class sanctuaries I take my family to, but we&#8217;ll travel like locals. No rigid itineraries, no tourist traps&#8212;just a private circuit of the island&#8217;s most beautiful corners.</p>
 					</div>
 				</div>
 			</div>
@@ -86,9 +87,9 @@ import { itinerary } from '../data/itinerary';
 		<section class="py-16 bg-volcanic-950 border-y border-white/5">
 			<div class="max-w-5xl mx-auto px-6 text-center">
 				<p class="text-rice-400 text-[10px] tracking-[0.3em] uppercase mb-4 font-bold">Ready for the invite?</p>
-				<h3 class="font-serif text-3xl md:text-4xl text-white mb-8">Let’s see if the expedition is a fit.</h3>
+				<h3 class="font-serif text-3xl md:text-4xl text-white mb-8">Let&#8217;s see if the expedition is a fit.</h3>
 				<a href="#apply" class="inline-block bg-rice-400 text-jungle-900 px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.25em] hover:bg-white transition-all">
-					Apply for a Spot
+					Book a Quick Call
 				</a>
 			</div>
 		</section>
@@ -115,17 +116,17 @@ import { itinerary } from '../data/itinerary';
 							</div>
 						</div>
 						<div class="absolute -bottom-6 -right-6 bg-rice-400 text-jungle-900 p-8 hidden md:block">
-							<p class="font-serif text-2xl italic">"I've mapped the routes they haven't found."</p>
+							<p class="font-serif text-2xl italic">&#8220;I&#8217;ve mapped the routes they haven&#8217;t found.&#8221;</p>
 						</div>
 					</div>
 
 					<div class="reveal">
 						<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Hosted by James Dawson</p>
-						<h2 class="font-serif text-5xl md:text-7xl text-white mb-8">Manly Local. <br> Bali Resident.</h2>
+						<h2 class="font-serif text-5xl md:text-7xl text-white mb-8">Sydney Local. <br> Bali Resident.</h2>
 						<div class="space-y-6 text-mist-50 text-xl md:text-2xl leading-relaxed font-light">
-							<p>I’ve worked as an outdoor guide for nearly a decade, but North Bali is the only place that ever made me stop moving. I’ve lived here since 2022, spending the last four years mapping the ridges, timing the tides, and figuring out exactly when to hit the popular spots so we have them entirely to ourselves.</p>
-							<p>This isn't just a route I’ve planned; it’s a collection of memories. It’s where I brought my dad for a Bintang on a volcano rim when he was sick. It’s the quiet temples I retreated to when I lost him. It’s the hidden valleys where I’ve taken my closest friends to show them what this island is actually capable of.</p>
-							<p>I’m opening this pilot trip to my community in Manly because I want to show you the Bali that exists beyond the traffic. I don't run tours; I run expeditions. I handle the logistics, the safety, and the timing—you just need to show up.</p>
+							<p>I&#8217;ve worked as an outdoor guide for nearly a decade, but North Bali is the only place that ever made me stop moving. I&#8217;ve lived here since 2022, spending the last four years mapping the ridges, timing the tides, and figuring out exactly when to hit the popular spots so we have them entirely to ourselves.</p>
+							<p>This isn&#8217;t just a route I&#8217;ve planned; it&#8217;s a collection of memories. It&#8217;s where I brought my dad for a Bintang on a volcano rim when he was sick. It&#8217;s the quiet temples I retreated to when I lost him. It&#8217;s the hidden valleys where I&#8217;ve taken my closest friends to show them what this island is actually capable of.</p>
+							<p>I&#8217;m opening this pilot trip to my community back home because I want to show you the Bali that exists beyond the traffic. I don&#8217;t run tours; I run expeditions. I handle the logistics, the safety, and the timing&#8212;you just need to show up.</p>
 						</div>
 					</div>
 				</div>
@@ -138,10 +139,11 @@ import { itinerary } from '../data/itinerary';
 				<div class="text-center mb-16">
 					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Fit Check</p>
 					<h2 class="font-serif text-5xl md:text-6xl text-white tracking-tighter">Who This Is For.</h2>
+					<p class="text-mist-400 text-sm mt-4 max-w-lg mx-auto">We welcome travellers 30+ who value adventure, comfort, and meaningful connection. Our key demographic is fit, semi-retired explorers&#8212;but anyone with the right energy is welcome.</p>
 				</div>
 				<div class="grid md:grid-cols-2 gap-12">
 					<div class="reveal p-8 bg-volcanic-900/60 border border-white/5 rounded-sm">
-						<h3 class="font-serif text-2xl text-white mb-6">It’s for you if…</h3>
+						<h3 class="font-serif text-2xl text-white mb-6">It&#8217;s for you if&#8230;</h3>
 						<ul class="space-y-4 text-mist-200 text-sm">
 							<li class="flex items-start gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
@@ -149,7 +151,7 @@ import { itinerary } from '../data/itinerary';
 							</li>
 							<li class="flex items-start gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
-								You’re open to early starts, short hikes, and spontaneous moments.
+								You&#8217;re open to early starts, short hikes, and spontaneous moments.
 							</li>
 							<li class="flex items-start gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
@@ -158,7 +160,7 @@ import { itinerary } from '../data/itinerary';
 						</ul>
 					</div>
 					<div class="reveal p-8 bg-volcanic-900/60 border border-white/5 rounded-sm">
-						<h3 class="font-serif text-2xl text-white mb-6">It’s not ideal if…</h3>
+						<h3 class="font-serif text-2xl text-white mb-6">It&#8217;s not ideal if&#8230;</h3>
 						<ul class="space-y-4 text-mist-200 text-sm">
 							<li class="flex items-start gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full mt-2"></span>
@@ -181,87 +183,92 @@ import { itinerary } from '../data/itinerary';
 		<!-- Social Proof (Reviews) -->
 		<section id="reviews" class="py-32 bg-jungle-800 border-b border-white/5 overflow-hidden">
 			<div class="max-w-4xl mx-auto px-6">
+				<div class="text-center mb-16 reveal">
+					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">800+ Five-Star Reviews</p>
+					<h2 class="font-serif text-5xl md:text-6xl text-white tracking-tighter">What Guests Say.</h2>
+					<p class="text-mist-400 text-sm mt-4 max-w-lg mx-auto">From years of guiding experiences across Sydney and Bali.</p>
+				</div>
 				<div id="reviews-slider" class="relative">
 					<div class="reviews-track flex transition-transform duration-1000 ease-in-out">
 						<!-- Slide 1 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James was super knowledgeable and friendly, and I felt safe the entire time. 10/10."
+								&#8220;Felt very safe and went at a pace that worked for the entire group. James is a great guy&#8212;you really get to see the area through the eyes of a local.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Gracie • January 2026</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Annabelle &bull; Birmingham, UK</cite>
 						</div>
 						<!-- Slide 2 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James is a great guy, you really get to see the area through the eyes of a local."
+								&#8220;The best part was the meaningfulness brought to the experience through the storytelling and facts. James is brilliant at tailoring the experience to each participant&#8217;s needs.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Annabelle • March 2024</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Tahli &bull; Melbourne, AU</cite>
 						</div>
 						<!-- Slide 3 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James was an incredible kind and knowledgeable guide. I’m grateful for his suggestions."
+								&#8220;James was able to tell us so much about the environment. Definitely felt more personal, like going on a trip with a friend. Highly recommend!&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Divya • March 2024</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Lindsay &bull; Uranquinty, AU</cite>
 						</div>
 						<!-- Slide 4 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James is great, he is very kind, has a lot of knowledge and passion for what he does."
+								&#8220;James is great&#8212;very kind, with a lot of knowledge and passion for what he does. He knows his way around and showed us incredible spots.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Michaela • March 2024</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Michaela &bull; Munich, DE</cite>
 						</div>
 						<!-- Slide 5 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James is an expert in his craft and he enjoys every moment of it! Safe, fun, and educational."
+								&#8220;James is an expert in his craft and he enjoys every moment of it. Safe, fun, and very educational.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Jesse • February 2024</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Jesse &bull; Japan</cite>
 						</div>
 						<!-- Slide 6 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James was amazing. He is passionate about the ocean and the beautiful life underwater."
+								&#8220;His friendly and calm demeanor put all of us at ease. James was able to support everyone and made it look easy!&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Léo • January 2024</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Mykol &bull; Wisconsin, US</cite>
 						</div>
 						<!-- Slide 7 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James was knowledgeable and inclusive. His knowledge of the area was super helpful for us!"
+								&#8220;James gave us all his attention and time. I really had a great time and felt like I was going out with a friend.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Christina • December 2023</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Isha &bull; Melbourne, AU</cite>
 						</div>
 						<!-- Slide 8 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"The personalized attention and safety measures ensured a worry-free and enjoyable outing."
+								&#8220;Clear communication in what to expect. James was knowledgeable and inclusive throughout our adventure.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Joerg • December 2023</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Christina &bull; Saskatoon, CA</cite>
 						</div>
 						<!-- Slide 9 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James's knowledge and love of the ocean shone through. His calm demeanor put all of us at ease."
+								&#8220;You could tell that he was an expert at what he did. His gentle and calm personality kept us feeling secure.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Mykol • March 2023</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Shivshankar &bull; Singapore</cite>
 						</div>
 						<!-- Slide 10 -->
 						<div class="min-w-full flex flex-col items-center text-center px-4 md:px-10">
-							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">★★★★★</div>
+							<div class="text-rice-400 mb-8 flex gap-1 tracking-widest text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-white mb-10 leading-tight italic">
-								"James is brilliant at tailoring the experience to each participant’s needs. Truly personal."
+								&#8220;James was super knowledgeable and friendly, and I felt safe the entire time. 10/10.&#8221;
 							</blockquote>
-							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Tahli • January 2023</cite>
+							<cite class="not-italic text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Gracie &bull; Horsham, AU</cite>
 						</div>
 					</div>
 
@@ -283,13 +290,80 @@ import { itinerary } from '../data/itinerary';
 				</div>
 			</div>
 		</section>
+
+		<!-- The Path (Itinerary) -->
+		<section id="itinerary" class="py-32 bg-volcanic-900">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+					<div>
+						<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">The Expedition Path</p>
+						<h2 class="font-serif text-5xl md:text-8xl text-white leading-none tracking-tighter">Ten Days of <br> Discovery.</h2>
+					</div>
+					<div class="max-w-md text-mist-300">
+						<p>We move with the sun. From the black sand of the west to the misty ridges of the north, every stop is intentional. No filler. No tourist traps.</p>
+					</div>
+				</div>
+
+				<div class="mb-16 grid sm:grid-cols-4 gap-6 text-center reveal">
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 1&#8211;2</p>
+						<p class="text-white font-serif text-xl">Coast &amp; black sand</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 3&#8211;6</p>
+						<p class="text-white font-serif text-xl">Misty ridges</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 7&#8211;8</p>
+						<p class="text-white font-serif text-xl">Temples &amp; falls</p>
+					</div>
+					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
+						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 9&#8211;10</p>
+						<p class="text-white font-serif text-xl">Soft landing by sea</p>
+					</div>
+				</div>
+
+				<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+					<div class="reveal">
+						<div class="relative group aspect-[16/9] overflow-hidden rounded-sm shadow-2xl bg-volcanic-800">
+							<img src="/assets/WakaGangga/beach.jpg" alt="Expedition Start" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+							<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-jungle-950/20 transition-colors"></div>
+							<div class="absolute inset-0 flex items-center justify-center">
+								<a href="/itinerary/1" class="bg-white text-jungle-900 px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-rice-400 transition-all transform hover:scale-105 shadow-2xl">
+									Begin the Journey
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="reveal space-y-8">
+						<h3 class="font-serif text-4xl text-white">The Path is Mapped.</h3>
+						<p class="text-mist-200 text-xl font-light leading-relaxed">Each day has been curated to balance high-adrenaline discovery with profound sanctuary. We&#8217;ve mapped out the details into a granular, day-by-day guide.</p>
+						
+						<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
+							{itinerary.map(day => (
+								<a href={`/itinerary/${day.id}`} class="group relative aspect-square overflow-hidden border border-white/10 flex flex-col items-center justify-center transition-all rounded-xs">
+									<img src={day.discovery.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+									<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
+									<div class="relative z-10 flex flex-col items-center">
+										<span class="text-white font-serif text-2xl mb-1 group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{day.id}</span>
+										<span class="text-[9px] uppercase tracking-widest text-rice-400 group-hover:text-white transition-colors">Day</span>
+									</div>
+								</a>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Stays Section (Sanctuaries) -->
 		<section id="sanctuaries" class="py-32 bg-volcanic-800">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="text-center mb-24 reveal">
 					<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">The Sanctuaries</p>
-					<h2 class="font-serif text-5xl md:text-7xl text-white mb-8 tracking-tighter">Where You'll Rest.</h2>
-					<p class="text-mist-300 text-lg max-w-2xl mx-auto leading-relaxed">We aren't roughing it. Even though we’re going wild, we’re sleeping in style. These are the properties I personally vetted and fell in love with.</p>
+					<h2 class="font-serif text-5xl md:text-7xl text-white mb-8 tracking-tighter">Where You&#8217;ll Rest.</h2>
+					<p class="text-mist-300 text-lg max-w-2xl mx-auto leading-relaxed">We aren&#8217;t roughing it. Even though we&#8217;re going wild, we&#8217;re sleeping in style. These are the properties I personally vetted and fell in love with.</p>
 				</div>
 
 				<div class="space-y-48">
@@ -335,7 +409,7 @@ import { itinerary } from '../data/itinerary';
 									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
 								</div>
 							</div>
-							<p class="text-mist-200 text-xl font-light max-w-3xl leading-relaxed">Perched 1,000 meters above the clouds on a working coffee plantation. Home to Bali's most iconic infinity pool and the freshest mountain air.</p>
+							<p class="text-mist-200 text-xl font-light max-w-3xl leading-relaxed">Perched 1,000 meters above the clouds on a working coffee plantation. Home to Bali&#8217;s most iconic infinity pool and the freshest mountain air.</p>
 						</div>
 						<div class="lg:col-span-12">
 							<div class="grid md:grid-cols-2 gap-8">
@@ -445,72 +519,6 @@ import { itinerary } from '../data/itinerary';
 			</div>
 		</section>
 
-		<!-- The Path (Itinerary) -->
-		<section id="itinerary" class="py-32 bg-volcanic-900">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-					<div>
-						<p class="text-rice-400 text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">The Expedition Path</p>
-						<h2 class="font-serif text-5xl md:text-8xl text-white leading-none tracking-tighter">Ten Days of <br> Discovery.</h2>
-					</div>
-					<div class="max-w-md text-mist-300">
-						<p>We move with the sun. From the black sand of the west to the misty ridges of the north, every stop is intentional. No filler. No tourist traps.</p>
-					</div>
-				</div>
-
-				<div class="mb-16 grid sm:grid-cols-4 gap-6 text-center reveal">
-					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
-						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 1–2</p>
-						<p class="text-white font-serif text-xl">Coast & black sand</p>
-					</div>
-					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
-						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 3–6</p>
-						<p class="text-white font-serif text-xl">Misty ridges</p>
-					</div>
-					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
-						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 7–8</p>
-						<p class="text-white font-serif text-xl">Temples & falls</p>
-					</div>
-					<div class="p-6 bg-volcanic-950/60 border border-white/5 rounded-sm">
-						<p class="text-white/40 text-[10px] uppercase tracking-[0.3em] mb-2">Days 9–10</p>
-						<p class="text-white font-serif text-xl">Soft landing by sea</p>
-					</div>
-				</div>
-
-				<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-					<div class="reveal">
-						<div class="relative group aspect-[16/9] overflow-hidden rounded-sm shadow-2xl bg-volcanic-800">
-							<img src="/assets/WakaGangga/beach.jpg" alt="Expedition Start" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-							<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-jungle-950/20 transition-colors"></div>
-							<div class="absolute inset-0 flex items-center justify-center">
-								<a href="/itinerary/1" class="bg-white text-jungle-900 px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-rice-400 transition-all transform hover:scale-105 shadow-2xl">
-									Begin the Journey
-								</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="reveal space-y-8">
-						<h3 class="font-serif text-4xl text-white">The Path is Mapped.</h3>
-						<p class="text-mist-200 text-xl font-light leading-relaxed">Each day has been curated to balance high-adrenaline discovery with profound sanctuary. We've mapped out the details into a granular, day-by-day guide.</p>
-						
-						<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
-							{itinerary.map(day => (
-								<a href={`/itinerary/${day.id}`} class="group relative aspect-square overflow-hidden border border-white/10 flex flex-col items-center justify-center transition-all rounded-xs">
-									<img src={day.discovery.img} alt={`Day ${day.id}`} class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
-									<div class="absolute inset-0 bg-jungle-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
-									<div class="relative z-10 flex flex-col items-center">
-										<span class="text-white font-serif text-2xl mb-1 group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{day.id}</span>
-										<span class="text-[9px] uppercase tracking-widest text-rice-400 group-hover:text-white transition-colors">Day</span>
-									</div>
-								</a>
-							))}
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<!-- FAQ -->
 		<section id="faq" class="py-32 bg-jungle-800 border-y border-white/5">
 			<div class="max-w-5xl mx-auto px-6">
@@ -520,8 +528,8 @@ import { itinerary } from '../data/itinerary';
 				</div>
 				<div class="grid md:grid-cols-2 gap-10">
 					<div class="reveal">
-						<h3 class="font-serif text-2xl text-white mb-4">What’s the fitness level?</h3>
-						<p class="text-mist-200 text-sm leading-relaxed">Moderate. Expect early starts, a few short hikes, and some uneven paths. Nothing extreme, but you should be comfortable moving each day.</p>
+						<h3 class="font-serif text-2xl text-white mb-4">What&#8217;s the fitness level?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">Moderate. Expect early starts, a few short hikes (30&#8211;60 mins), and some uneven paths. Nothing extreme, but you should be comfortable being active each day. A full packing guide and physical expectations breakdown will be included in your Welcome Dossier.</p>
 					</div>
 					<div class="reveal">
 						<h3 class="font-serif text-2xl text-white mb-4">How do rooms work?</h3>
@@ -529,16 +537,32 @@ import { itinerary } from '../data/itinerary';
 					</div>
 					<div class="reveal">
 						<h3 class="font-serif text-2xl text-white mb-4">Is this a group tour?</h3>
-						<p class="text-mist-200 text-sm leading-relaxed">It’s a hosted expedition with a tight group and a flexible flow. Think friends on a road trip with a local insider running logistics.</p>
+						<p class="text-mist-200 text-sm leading-relaxed">It&#8217;s a hosted expedition with a tight group and a flexible flow. Think friends on a road trip with a local insider running logistics. That&#8217;s why we have a quick vetting call before you book&#8212;to make sure the group energy is right for everyone.</p>
 					</div>
 					<div class="reveal">
 						<h3 class="font-serif text-2xl text-white mb-4">What about safety?</h3>
-						<p class="text-mist-200 text-sm leading-relaxed">Routes are pre-scouted, transport is private, and timing avoids crowds. We can talk through any concerns before you commit.</p>
+						<p class="text-mist-200 text-sm leading-relaxed">Every route is pre-scouted, transport is private, and timing avoids crowds. Comprehensive travel insurance is mandatory for all guests&#8212;we&#8217;ll cover exactly what you need in your Welcome Dossier.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">What about visas?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">Australians receive a Visa on Arrival (VOA) at Bali airport&#8212;it takes about 5 minutes and costs ~$35 AUD. Your Welcome Dossier will include a complete visa and customs guide so there are zero surprises at the border.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">What&#8217;s the weather like in April?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">April is ideal&#8212;it&#8217;s the transition from wet to dry season. The landscapes are lush and green, waterfalls are at full power, and the crowds haven&#8217;t arrived yet. Expect warm days (27&#8211;30&#176;C) with the occasional afternoon shower in the mountains.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">Can you cater to dietary needs?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">With largely 4&#8211;5 star accommodation, our hotels are well-equipped to handle most dietary requirements. That said, Bali isn&#8217;t as accustomed to specific dietary needs as the West, so let us know in advance and we&#8217;ll do our best to accommodate.</p>
+					</div>
+					<div class="reveal">
+						<h3 class="font-serif text-2xl text-white mb-4">How does payment work?</h3>
+						<p class="text-mist-200 text-sm leading-relaxed">A 20% deposit secures your spot after our vetting call. Full payment is due by March 1, 2026. We&#8217;ll walk through the details on our call.</p>
 					</div>
 				</div>
 				<div class="text-center mt-12">
 					<a href="#apply" class="inline-block border border-white/30 text-white px-10 py-5 rounded-sm font-medium text-xs uppercase tracking-[0.25em] hover:bg-white hover:text-jungle-900 transition-all">
-						Message James
+						Chat with James
 					</a>
 				</div>
 			</div>
@@ -552,25 +576,65 @@ import { itinerary } from '../data/itinerary';
 					<div class="reveal">
 						<h2 class="font-serif text-5xl md:text-7xl text-white mb-2 leading-none">The Pilot <br class="md:hidden"> Access.</h2>
 						<p class="text-rice-400 text-[10px] uppercase tracking-[0.3em] mt-4 mb-12 font-bold">This is the inaugural run. Pricing built for community.</p>
-						<div class="space-y-8 mb-16">
+						<div class="space-y-8 mb-12">
 							<div class="flex justify-between items-end border-b border-white/10 pb-6">
 								<span class="text-mist-200 uppercase tracking-widest text-[10px]">Twin Share / Couples</span>
-								<span class="font-serif text-3xl sm:text-4xl text-rice-300">$3,750<span class="text-xs uppercase ml-2 tracking-normal font-sans">pp</span></span>
+								<span class="font-serif text-3xl sm:text-4xl text-rice-300">$3,750<span class="text-xs uppercase ml-2 tracking-normal font-sans">AUD pp</span></span>
 							</div>
 							<div class="flex justify-between items-end border-b border-white/10 pb-6">
 								<span class="text-mist-200 uppercase tracking-widest text-[10px]">Solo (Private Room)</span>
-								<span class="font-serif text-3xl sm:text-4xl text-rice-300">$5,750<span class="text-xs uppercase ml-2 tracking-normal font-sans">pp</span></span>
+								<span class="font-serif text-3xl sm:text-4xl text-rice-300">$5,750<span class="text-xs uppercase ml-2 tracking-normal font-sans">AUD pp</span></span>
 							</div>
 						</div>
-						<a href="mailto:james@forgottenbali.com?subject=Expedition Application - April 2026" class="inline-block bg-rice-400 text-jungle-900 px-12 py-6 rounded-sm font-bold text-sm uppercase tracking-[0.2em] hover:bg-white transition-all w-full text-center">
-							Apply for a Spot / Message James
-						</a>
-						<p class="text-white/30 text-center mt-6 text-[10px] uppercase tracking-widest">Intimate by design. Only 8 slots available.</p>
-						<p class="text-white/20 text-center mt-2 text-[9px] uppercase tracking-[0.2em] italic">Let's chat to see if the vibe is right for you.</p>
+						<div class="p-6 bg-volcanic-900/40 border border-white/5 rounded-sm mb-12">
+							<p class="text-white/50 text-[10px] uppercase tracking-widest mb-3">How It Works</p>
+							<ul class="space-y-2 text-mist-300 text-sm">
+								<li class="flex items-start gap-3">
+									<span class="text-rice-400 font-bold">1.</span>
+									Send James a message to book a quick vetting call
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-rice-400 font-bold">2.</span>
+									20% deposit secures your spot
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-rice-400 font-bold">3.</span>
+									Full payment due by March 1, 2026
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-rice-400 font-bold">4.</span>
+									Receive your Welcome Dossier with everything you need
+								</li>
+							</ul>
+						</div>
+						<div class="grid grid-cols-1 gap-4">
+							<a href={siteConfig.whatsapp} target="_blank" class="flex items-center justify-center gap-4 bg-rice-400 text-jungle-900 px-8 py-5 rounded-sm font-bold text-sm uppercase tracking-[0.2em] hover:bg-white transition-all w-full text-center group">
+								<svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.393 0 12.029c0 2.119.554 4.188 1.608 6.049L0 24l6.123-1.605a11.805 11.805 0 005.925 1.586h.005c6.632 0 12.028-5.391 12.031-12.027a11.805 11.805 0 00-3.571-8.514"/>
+								</svg>
+								WhatsApp James
+							</a>
+							<div class="grid grid-cols-2 gap-4">
+								<a href={`sms:${siteConfig.phone}`} class="flex items-center justify-center gap-3 border border-white/20 text-white px-6 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-jungle-900 transition-all group">
+									<svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+									</svg>
+									Text
+								</a>
+								<a href={`mailto:${siteConfig.email}?subject=Expedition Application - April 2026`} class="flex items-center justify-center gap-3 border border-white/20 text-white px-6 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-jungle-900 transition-all group">
+									<svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+									</svg>
+									Email
+								</a>
+							</div>
+						</div>
+						<p class="text-white/30 text-center mt-8 text-[10px] uppercase tracking-widest leading-relaxed">Intimate by design. Only 8 slots available.</p>
+						<p class="text-white/20 text-center mt-2 text-[9px] uppercase tracking-[0.25em] italic">We vet every guest to protect the group energy.</p>
 					</div>
 
 					<div class="reveal">
-						<h3 class="font-serif text-2xl text-white mb-8">What's Inside.</h3>
+						<h3 class="font-serif text-2xl text-white mb-8">What&#8217;s Inside.</h3>
 						<ul class="space-y-4 text-mist-300 text-sm">
 							<li class="flex items-center gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
@@ -582,24 +646,34 @@ import { itinerary } from '../data/itinerary';
 							</li>
 							<li class="flex items-center gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
-								Daily Breakfasts & Road Trip Lunches
+								Daily Breakfasts &amp; Road Trip Lunches
 							</li>
 							<li class="flex items-center gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
-								Daily Meditation & Breathwork (Optional)
+								Daily Meditation &amp; Breathwork (Optional)
 							</li>
 							<li class="flex items-center gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
-								All Entrance Fees & Private Hosting
+								All Entrance Fees &amp; Private Hosting
 							</li>
 							<li class="flex items-center gap-4">
 								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
 								Airport Transfers (Same Day)
 							</li>
+							<li class="flex items-center gap-4">
+								<span class="w-1.5 h-1.5 bg-rice-400 rounded-full"></span>
+								Welcome Dossier (Packing, visa, customs &amp; prep guide)
+							</li>
 						</ul>
 						<div class="mt-12 p-8 bg-volcanic-900/50 border border-white/5 rounded-sm">
 							<p class="text-white/40 text-[10px] uppercase tracking-widest mb-4">Not Included</p>
-							<p class="text-mist-400 text-sm leading-relaxed">Flights, Dinners & Drinks. We’ll hit my favorite local spots for dinner each night—grab a Bintang, split a feast, keep it easy.</p>
+							<ul class="space-y-3 text-mist-400 text-sm leading-relaxed">
+								<li><strong class="text-mist-300">Flights</strong> to/from Bali</li>
+								<li><strong class="text-mist-300">Visa on Arrival</strong> (~$35 AUD at the airport)*</li>
+								<li><strong class="text-mist-300">Dinners &amp; drinks</strong> &#8212; we&#8217;ll hit my favourite local spots each night. Expect $10&#8211;30 AUD per meal</li>
+								<li><strong class="text-mist-300">Comprehensive travel insurance</strong> (mandatory for all guests)</li>
+							</ul>
+							<p class="text-mist-500 text-xs mt-4 italic">*Full visa and customs walkthrough included in your Welcome Dossier.</p>
 						</div>
 					</div>
 				</div>

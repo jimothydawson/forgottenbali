@@ -224,12 +224,12 @@ export const itinerary = [
     },
     {
         id: 10,
-        title: "Decompression",
+        title: "Decompression & Departure",
         discovery: {
             img: "/assets/maya-sanur/pool-beach.jpg",
             alt: "Sanur Sunrise",
             label: "Day 10 • The Decompression",
-            text: "A final sunrise on the beach. Reflecting on the journey before private transfers home. Terima Kasih."
+            text: "A slow, golden sunrise on Sanur beach. One last breakfast together, swapping stories from the road. Optional spa time or a quiet stroll along the lagoon boardwalk before private transfers to the airport. No rush. No alarms. Just the warmth of new friendships and the island saying goodbye. Terima Kasih."
         },
         sanctuary: {
             type: "end",

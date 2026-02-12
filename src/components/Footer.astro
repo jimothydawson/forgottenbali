@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from '../data/config';
 ---
 <footer class="py-20 pb-48 bg-volcanic-900 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
@@ -6,8 +7,8 @@
         <div class="flex gap-12 text-[10px] uppercase tracking-widest text-white/40">
             <a href="#" class="hover:text-rice-300 transition-colors" aria-label="Instagram (coming soon)">Instagram</a>
             <a href="#" class="hover:text-rice-300 transition-colors" aria-label="Privacy policy (coming soon)">Privacy</a>
-            <a href="mailto:james@forgottenbali.com" class="hover:text-rice-300 transition-colors">Contact</a>
+            <a href={`mailto:${siteConfig.email}`} class="hover:text-rice-300 transition-colors">Contact</a>
         </div>
-        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; {new Date().getFullYear()} All Rights Reserved.</p>
+        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
     </div>
 </footer>
