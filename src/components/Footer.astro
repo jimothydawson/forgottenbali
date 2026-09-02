@@ -3,12 +3,15 @@ import { siteConfig } from '../data/config';
 ---
 <footer class="py-20 pb-48 bg-volcanic-900 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
-        <div class="font-serif text-3xl">Forgotten Bali</div>
+        <div class="text-center md:text-left">
+            <div class="font-serif text-3xl">Unfold</div>
+            <p class="text-sm text-white/50 mt-2">Small-group journeys through Indonesia.<br>Forgotten Bali is the first.</p>
+        </div>
         <div class="flex gap-12 text-[10px] uppercase tracking-widest text-white/40">
             <a href="#" class="hover:text-rice-300 transition-colors" aria-label="Instagram (coming soon)">Instagram</a>
-            <a href="#" class="hover:text-rice-300 transition-colors" aria-label="Privacy policy (coming soon)">Privacy</a>
             <a href={`mailto:${siteConfig.email}`} class="hover:text-rice-300 transition-colors">Contact</a>
+            <a href="#" class="hover:text-rice-300 transition-colors" aria-label="Privacy policy (coming soon)">Privacy</a>
         </div>
-        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; 2027 Unfold</p>
     </div>
 </footer>
